@@ -1,0 +1,22 @@
+{
+  "domain": "steuerberater-telefonbot.de",
+  "niche": "Steuerberater",
+  "nicheDE": "Steuerkanzleien",
+  "projectPath": "/Users/hydra-01/Documents/DigiWorkspace/steuerberater-telefonbot",
+  "phase": "deployer",
+  "phases": {
+    "stratege": "done",
+    "architekt": "done",
+    "texter": "done",
+    "media": "done",
+    "integrator": "done",
+    "seo-qa": "done",
+    "deployer": "pending"
+  },
+  "outputs": {
+    "integrator": {
+      "digiletterListId": "cmnhhpi9q0007mz01wlwi908a",
+      "sequenceId": "cmnhhqj600009mz01znmghg5x"
+    }
+  }
+}

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="de"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Steuerberater AI - Ihr KI-Telefonbot</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+        darkMode: "class",
+        theme: {
+            extend: {
+                colors: {
+                    "secondary-fixed-dim": "#b9c7df",
+                    "tertiary": "#415ba4",
+                    "secondary": "#515f74",
+                    "primary-fixed": "#d9e2ff",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "surface-dim": "#d8dadc",
+                    "on-tertiary-fixed": "#00174b",
+                    "surface-container": "#f0f2f5",
+                    "on-tertiary-container": "#254188",
+                    "on-secondary-container": "#44474e",
+                    "inverse-on-surface": "#eff1f3",
+                    "secondary-container": "#d6e3ff",
+                    "surface-tint": "#005db6",
+                    "surface-container-high": "#e7e8ea",
+                    "on-primary-fixed": "#001b3e",
+                    "surface-bright": "#f8f9fc",
+                    "background": "#f8f9fc",
+                    "tertiary-fixed-dim": "#b4c5ff",
+                    "primary-fixed-dim": "#adc6ff",
+                    "on-tertiary-fixed-variant": "#27438a",
+                    "surface-container-highest": "#e1e2e5",
+                    "on-background": "#1a1c1e",
+                    "on-primary": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "on-primary-container": "#001b3e",
+                    "on-surface": "#1a1c1e",
+                    "on-surface-variant": "#44474e",
+                    "outline": "#74777f",
+                    "tertiary-fixed": "#dbe1ff",
+                    "error": "#ba1a1a",
+                    "on-error": "#ffffff",
+                    "surface-container-low": "#f1f3f6",
+                    "tertiary-container": "#97b0ff",
+                    "inverse-primary": "#adc6ff",
+                    "primary": "#004a8f",
+                    "surface-variant": "#dee2eb"
+                },
+                fontFamily: {
+                    "headline": ["Newsreader", "serif"],
+                    "body": ["Inter", "sans-serif"],
+                    "label": ["Inter", "sans-serif"]
+                },
+                borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+            },
+        },
+    }
+</script>
+<style type="text/tailwindcss">
+    .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        vertical-align: middle;
+    }
+    .glass-nav {
+        background: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(24px);
+    }
+    .text-gradient-gold {
+        background: linear-gradient(135deg, #001b3e 0%, #0ea5e9 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    .cta-gradient {
+        background: linear-gradient(135deg, #003366 0%, #005bb5 100%);
+    }
+</style>
+</head>
+<body class="bg-background text-on-background font-body antialiased">
+<nav class="fixed top-0 w-full z-50 glass-nav border-b border-slate-200/50 shadow-sm shadow-slate-200/20">
+<div class="flex justify-between items-center max-w-7xl mx-auto px-6 py-4">
+<div class="text-2xl font-serif italic text-primary">Steuerberater AI</div>
+<div class="hidden md:flex items-center space-gap-8 gap-8">
+<a class="font-serif font-light text-primary border-b-2 border-primary pb-1" href="#">Services</a>
+<a class="font-serif font-light text-slate-500 hover:text-primary transition-opacity duration-300" href="#">AI Insights</a>
+<a class="font-serif font-light text-slate-500 hover:text-primary transition-opacity duration-300" href="#">Pricing</a>
+<a class="font-serif font-light text-slate-500 hover:text-primary transition-opacity duration-300" href="#">About</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="px-5 py-2 text-sm font-medium text-slate-600 hover:text-primary transition-colors">Login</button>
+<button class="cta-gradient px-6 py-2.5 rounded-full text-white font-medium shadow-lg shadow-blue-900/10 hover:opacity-95 transition-opacity transform active:scale-95 duration-200 ease-in-out">Get Started</button>
+</div>
+</div>
+</nav>
+<main class="pt-24">
+<section class="relative overflow-hidden px-6 lg:px-8 py-24 md:py-32">
+<div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<div class="z-10 text-left">
+<h1 class="font-headline text-5xl md:text-7xl leading-[1.1] text-on-surface mb-6">
+    Ihr KI-Telefonbot für Steuerkanzleien: <span class="italic text-gradient-gold">Entlastung, die Freude macht.</span>
+</h1>
+<p class="text-on-secondary-container text-lg md:text-xl max-w-xl mb-10 leading-relaxed">
+    Verwandeln Sie Ihren Kanzlei-Alltag. Unser intelligenter Telefon-Assistent übernimmt Routineanrufe, qualifiziert Anliegen und entlastet Ihr Team – damit Sie sich auf das Wesentliche konzentrieren können.
+</p>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="cta-gradient px-8 py-4 rounded-full text-white text-lg font-medium shadow-xl shadow-blue-900/20 hover:opacity-95 transition-all transform active:scale-95">
+    Kostenlose Beratung anfordern
+</button>
+<button class="px-8 py-4 rounded-full bg-surface-container-high text-on-surface text-lg font-medium hover:bg-slate-200 transition-all">
+    Wie es funktioniert
+</button>
+</div>
+</div>
+<div class="relative">
+<div class="relative rounded-2xl overflow-hidden aspect-[4/5] shadow-2xl transform lg:translate-x-12 ring-1 ring-slate-200">
+<img alt="Professional woman laughing in modern office" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvzpnQWg9tHvkVx93esyjbIIauPfvL2UURwWHfeEH2C78mMjEmMBJ0YmLcoZtAOzuQ3WPcO7o-507hZdIkfUltBA7wI4rdJ3izO6NK6J4OMnQh1Z3uu4wFCs8MPnNdHHFzWH-92hSkpGQtG8rOI8oPXr96dPxIrdUUkkm49PeuxX1_7_vMFEruWwEJ-89bshEjxtGxypc_gSAlECPojir9FEFElO0sVf6RxAPF2faUO6nRYrlcRNm-dyV-m5ZVpASemNZedM2J0irr"/>
+<div class="absolute inset-0 bg-gradient-to-t from-slate-900/20 to-transparent"></div>
+</div>
+<div class="absolute -bottom-6 -left-6 md:-left-12 p-8 glass-nav rounded-2xl shadow-xl max-w-xs border border-slate-200">
+<p class="font-headline text-2xl italic text-primary mb-2">"Endlich Ruhe für komplexe Fälle."</p>
+<p class="text-sm text-on-secondary-container">— Dr. Elena Schmidt, Steuerberaterin</p>
+</div>
+</div>
+</div>
+</section>
+<section class="bg-surface-container-low py-24 md:py-32">
+<div class="max-w-7xl mx-auto px-6">
+<div class="mb-16 text-center max-w-2xl mx-auto">
+<h2 class="font-headline text-4xl md:text-5xl text-on-surface mb-4">Intelligenz trifft auf Empathie</h2>
+<p class="text-on-secondary-container">Maßgeschneiderte Lösungen für die Herausforderungen moderner Kanzleien.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="bg-surface-container-lowest p-8 rounded-3xl transition-transform hover:-translate-y-1 shadow-sm border border-slate-100">
+<div class="w-12 h-12 rounded-2xl bg-blue-50 flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary text-3xl">schedule</span>
+</div>
+<h3 class="font-headline text-2xl text-on-surface mb-3">24/7 Erreichbarkeit</h3>
+<p class="text-on-secondary-container leading-relaxed">Kein Anruf geht mehr verloren. Ihr KI-Bot ist immer da, auch nach Feierabend oder am Wochenende.</p>
+</div>
+<div class="bg-surface-container-lowest p-8 rounded-3xl transition-transform hover:-translate-y-1 shadow-sm border border-slate-100">
+<div class="w-12 h-12 rounded-2xl bg-blue-50 flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary text-3xl" style="font-variation-settings: 'FILL' 1;">gavel</span>
+</div>
+<h3 class="font-headline text-2xl text-on-surface mb-3">DSGVO Konformität</h3>
+<p class="text-on-secondary-container leading-relaxed">Sicherheit an erster Stelle. Alle Daten werden nach strengsten deutschen Datenschutzstandards verarbeitet.</p>
+</div>
+<div class="bg-surface-container-lowest p-8 rounded-3xl transition-transform hover:-translate-y-1 shadow-sm border border-slate-100">
+<div class="w-12 h-12 rounded-2xl bg-blue-50 flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary text-3xl">account_balance</span>
+</div>
+<h3 class="font-headline text-2xl text-on-surface mb-3">DATEV Integration</h3>
+<p class="text-on-secondary-container leading-relaxed">Nahtlose Anbindung an Ihre bestehenden Workflows. Synchronisiert Termine und Notizen direkt in Ihr System.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24 md:py-32 overflow-hidden">
+<div class="max-w-7xl mx-auto px-6">
+<div class="flex flex-col lg:flex-row items-center gap-16">
+<div class="w-full lg:w-1/2 order-2 lg:order-1">
+<div class="relative">
+<img alt="Bright airy office lobby" class="rounded-3xl shadow-lg w-full object-cover aspect-[16/9] ring-1 ring-slate-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDT_nTgTdPQ5kCGa64DdWvv_shPZuyhJsuLqCxKj1HBnlqQjyUTlYqqPUSeqGAegkmdCTb02H8q_blWYJ0nmNXmUjfgEIKK7SFKYWED4CnLZmt9AC26nrAt-lbCNIy4M6Q01YH5G0WFvfFUL93rlnHFkkPngbc-7kq-swh8-DnlbAp43fIZTL2G5mmfoU4CDnOTb1eTYjI8vmYiO3IN6PiLMP8a0ovFqPpFflE-q-gFXzDRSP5zILrOx2jYRg07aTuyesBZKpr52ehW"/>
+</div>
+</div>
+<div class="w-full lg:w-1/2 order-1 lg:order-2">
+<span class="text-primary font-medium tracking-widest uppercase text-xs mb-4 block">Der Vorsprung</span>
+<h2 class="font-headline text-4xl md:text-5xl text-on-surface mb-6 leading-tight">Warum Steuerberater uns lieben</h2>
+<ul class="space-y-6">
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary">check_circle</span>
+<div>
+<h4 class="font-semibold text-on-surface">Reduzierung der Burnout-Gefahr</h4>
+<p class="text-on-secondary-container">Weniger Unterbrechungen bedeuten fokussierteres Arbeiten für Ihr gesamtes Team.</p>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary">check_circle</span>
+<div>
+<h4 class="font-semibold text-on-surface">Besserer Mandantenservice</h4>
+<p class="text-on-secondary-container">Mandanten erhalten sofortige Antworten und fühlen sich rund um die Uhr betreut.</p>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary">check_circle</span>
+<div>
+<h4 class="font-semibold text-on-surface">Effiziente Vor-Qualifizierung</h4>
+<p class="text-on-secondary-container">Der Bot erkennt Dringlichkeiten und leitet wichtige Infos strukturiert weiter.</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section class="max-w-7xl mx-auto px-6 mb-24">
+<div class="bg-[#001b3e] text-surface-container-lowest rounded-[2rem] p-12 md:p-20 text-center relative overflow-hidden">
+<div class="absolute top-0 right-0 w-64 h-64 bg-sky-400/10 rounded-full blur-[100px]"></div>
+<div class="absolute bottom-0 left-0 w-64 h-64 bg-primary/10 rounded-full blur-[100px]"></div>
+<div class="relative z-10">
+<h2 class="font-headline text-4xl md:text-6xl mb-8">Bereit für die Kanzlei der Zukunft?</h2>
+<p class="text-slate-300 text-lg md:text-xl max-w-2xl mx-auto mb-12">
+    Starten Sie noch heute und erleben Sie, wie KI Ihren Arbeitsalltag spürbar entlastet. Unser Team berät Sie individuell.
+</p>
+<button class="cta-gradient px-10 py-5 rounded-full text-white text-xl font-medium shadow-2xl shadow-black/20 hover:opacity-95 transition-all transform hover:scale-105 active:scale-95">
+    Jetzt kostenlose Beratung buchen
+</button>
+</div>
+</div>
+</section>
+</main>
+<footer class="bg-slate-50 border-t border-slate-200">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-7xl mx-auto px-8 py-12">
+<div class="space-y-4">
+<div class="text-xl font-serif font-bold text-primary">Steuerberater AI</div>
+<p class="font-sans text-sm tracking-wide text-slate-500">© 2024 Steuerberater AI. Precision meets empathy.</p>
+</div>
+<div class="flex flex-wrap gap-x-8 gap-y-4 md:justify-end items-center">
+<a class="text-slate-500 hover:text-primary transition-colors font-sans text-sm tracking-wide" href="#">Privacy Policy</a>
+<a class="text-slate-500 hover:text-primary transition-colors font-sans text-sm tracking-wide" href="#">Terms of Service</a>
+<a class="text-slate-500 hover:text-primary transition-colors font-sans text-sm tracking-wide" href="#">Imprint</a>
+<a class="text-slate-500 hover:text-primary transition-colors font-sans text-sm tracking-wide" href="#">Contact Support</a>
+<a class="text-slate-500 hover:text-primary transition-colors font-sans text-sm tracking-wide" href="#">Tax Guide</a>
+</div>
+</div>
+</footer>
+</body></html>
