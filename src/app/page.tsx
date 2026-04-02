@@ -121,7 +121,7 @@ export default function Home() {
           <div className="relative">
             <div className="relative rounded-2xl overflow-hidden aspect-[4/5] shadow-2xl transform lg:translate-x-12 ring-1 ring-slate-200">
               <Image
-                src="/images/hero-woman.webp"
+                src="/images/hero-woman.jpg"
                 alt="Steuerberaterin in moderner Kanzlei"
                 fill
                 className="object-cover"
@@ -235,7 +235,7 @@ export default function Home() {
             <div className="w-full lg:w-1/2 order-2 lg:order-1">
               <div className="relative">
                 <Image
-                  src="/images/office-lobby.webp"
+                  src="/images/office-lobby.jpg"
                   alt="Moderne Kanzlei-Lobby"
                   width={800}
                   height={450}
