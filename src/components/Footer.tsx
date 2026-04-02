@@ -2,52 +2,51 @@ import Link from "next/link";
 
 export function Footer() {
   return (
-    <footer className="bg-on-primary-fixed text-primary-fixed py-12">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row justify-between gap-8">
-          {/* Brand */}
-          <div>
-            <p className="font-headline text-lg italic font-semibold text-primary-fixed-dim">
-              steuerberater-telefonbot.de
-            </p>
-            <p className="mt-2 text-sm text-primary-fixed-dim/70 max-w-xs">
-              Der intelligente KI-Telefonbot für Steuerkanzleien — ein Service
-              der DigiRift GmbH.
-            </p>
+    <footer className="bg-slate-50 border-t border-slate-200">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-7xl mx-auto px-8 py-12">
+        {/* Left: Brand + Copyright */}
+        <div className="space-y-4">
+          <div className="text-xl font-headline font-bold text-primary">
+            Steuerberater AI
           </div>
-
-          {/* Links */}
-          <div className="flex flex-wrap gap-x-8 gap-y-2 text-sm">
-            <Link
-              href="/datenschutz"
-              className="text-primary-fixed-dim/80 hover:text-primary-fixed transition-colors"
-            >
-              Datenschutz
-            </Link>
-            <Link
-              href="/impressum"
-              className="text-primary-fixed-dim/80 hover:text-primary-fixed transition-colors"
-            >
-              Impressum
-            </Link>
-            <Link
-              href="/kontakt"
-              className="text-primary-fixed-dim/80 hover:text-primary-fixed transition-colors"
-            >
-              Kontakt
-            </Link>
-            <Link
-              href="/datenschutz-ki-telefonie"
-              className="text-primary-fixed-dim/80 hover:text-primary-fixed transition-colors"
-            >
-              DSGVO &amp; KI-Telefonie
-            </Link>
-          </div>
+          <p className="font-body text-sm tracking-wide text-slate-500">
+            &copy; {new Date().getFullYear()} Steuerberater AI. Ein Service der
+            DigiRift GmbH.
+          </p>
         </div>
 
-        <div className="mt-10 pt-6 border-t border-primary-fixed-dim/20 text-xs text-primary-fixed-dim/60">
-          &copy; 2026 steuerberater-telefonbot.de — Ein Service der DigiRift
-          GmbH
+        {/* Right: Links + E-Book teaser */}
+        <div className="flex flex-wrap gap-x-8 gap-y-4 md:justify-end items-center">
+          <Link
+            href="/datenschutz"
+            className="text-slate-500 hover:text-primary transition-colors font-body text-sm tracking-wide"
+          >
+            Datenschutz
+          </Link>
+          <Link
+            href="/impressum"
+            className="text-slate-500 hover:text-primary transition-colors font-body text-sm tracking-wide"
+          >
+            Impressum
+          </Link>
+          <Link
+            href="/kontakt"
+            className="text-slate-500 hover:text-primary transition-colors font-body text-sm tracking-wide"
+          >
+            Kontakt
+          </Link>
+          <Link
+            href="/datenschutz-ki-telefonie"
+            className="text-slate-500 hover:text-primary transition-colors font-body text-sm tracking-wide"
+          >
+            DSGVO &amp; KI-Telefonie
+          </Link>
+          <Link
+            href="/ratgeber"
+            className="text-slate-500 hover:text-primary transition-colors font-body text-sm tracking-wide"
+          >
+            Ratgeber
+          </Link>
         </div>
       </div>
     </footer>

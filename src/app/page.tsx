@@ -1,77 +1,17 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "KI-Telefonbot für Steuerkanzleien | steuerberater-telefonbot.de",
+  title: "KI-Telefonbot für Steuerkanzleien | Steuerberater AI",
   description:
-    "Der intelligente KI-Telefonbot für Steuerkanzleien. 24/7 Erreichbarkeit, automatische Terminvergabe, Frist-Erinnerungen — DSGVO-konform. Full-Service von DigiRift.",
+    "Der intelligente KI-Telefonbot für Steuerkanzleien. 24/7 Erreichbarkeit, DSGVO-konform, Full-Service — wir bauen, konfigurieren und betreuen Ihren Bot.",
 };
-
-const trustItems = [
-  { icon: "verified_user", label: "DSGVO-konform" },
-  { icon: "dns", label: "Deutsche Server" },
-  { icon: "support_agent", label: "Persönlicher Ansprechpartner" },
-  { icon: "event_available", label: "Monatlich kündbar" },
-];
-
-const features = [
-  {
-    icon: "handshake",
-    title: "Full-Service",
-    text: "Wir übernehmen alles — von der Konzeption über die Einrichtung bis zur laufenden Optimierung. Sie müssen sich um nichts kümmern.",
-  },
-  {
-    icon: "lock",
-    title: "Steuergeheimnis-konform",
-    text: "Unser Bot ist nach §203 StGB und den Anforderungen der Steuerberaterkammer konzipiert. Mandantendaten bleiben geschützt.",
-  },
-  {
-    icon: "sync",
-    title: "DATEV-kompatibel",
-    text: "Nahtlose Integration mit Ihrer bestehenden Kanzleisoftware — Termine, Fristen und Mandantendaten werden automatisch synchronisiert.",
-  },
-];
-
-const benefits = [
-  "24/7 Erreichbarkeit — auch außerhalb der Sprechzeiten",
-  "Automatische Terminvergabe direkt im Kanzleikalender",
-  "Frist-Erinnerungen per Telefon an Ihre Mandanten",
-  "Unterlagen-Einsammlung vor Steuererklärungsterminen",
-  "Status-Auskünfte zu laufenden Vorgängen",
-  "Entlastung Ihres Sekretariats um bis zu 70 %",
-];
-
-const steps = [
-  {
-    nr: "01",
-    title: "Kostenloses Erstgespräch",
-    text: "Wir analysieren Ihre Kanzleiabläufe und identifizieren, welche Anrufszenarien der Bot übernehmen kann.",
-  },
-  {
-    nr: "02",
-    title: "Konfiguration & Training",
-    text: "Unser Team richtet den Bot ein, trainiert ihn auf Ihre Kanzlei und integriert ihn in Ihre Telefonanlage.",
-  },
-  {
-    nr: "03",
-    title: "Testphase & Optimierung",
-    text: "Der Bot läuft parallel zu Ihrem Team. Wir optimieren kontinuierlich, bis alles perfekt sitzt.",
-  },
-];
-
-const dsgvoChecks = [
-  "Verarbeitung ausschließlich auf deutschen Servern",
-  "Auftragsverarbeitungsvertrag (AVV) inklusive",
-  "Konform mit §203 StGB (Steuergeheimnis)",
-  "Keine Weitergabe von Mandantendaten an Dritte",
-  "Automatische Löschung nach konfigurierbarer Frist",
-  "Regelmäßige Sicherheitsaudits und Penetrationstests",
-];
 
 const faqs = [
   {
     q: "Wie funktioniert der KI-Telefonbot für meine Steuerkanzlei?",
-    a: "Der Bot nimmt eingehende Anrufe entgegen, erkennt das Anliegen des Mandanten und bearbeitet es selbstständig — z. B. Terminvergabe, Frist-Erinnerungen oder Status-Auskünfte. Komplexe Anliegen leitet er an Ihr Team weiter.",
+    a: "Der Bot nimmt eingehende Anrufe entgegen, erkennt das Anliegen des Mandanten und bearbeitet es selbstständig — z. B. Terminvergabe, Frist-Erinnerungen oder Status-Auskünfte. Komplexe Anliegen leitet er nahtlos an Ihr Team weiter.",
   },
   {
     q: "Ist der Bot DSGVO-konform und mit dem Steuergeheimnis vereinbar?",
@@ -79,7 +19,7 @@ const faqs = [
   },
   {
     q: "Muss ich mich selbst um die Technik kümmern?",
-    a: "Nein. Wir sind ein Full-Service-Dienstleister. Von der Einrichtung über die Integration in Ihre Telefonanlage bis zur laufenden Optimierung — wir übernehmen alles.",
+    a: "Nein. Wir sind ein Full-Service-Dienstleister. Von der Einrichtung über die Integration in Ihre Telefonanlage bis zur laufenden Optimierung — wir übernehmen alles. Sie müssen nichts konfigurieren.",
   },
   {
     q: "Kann der Bot mit meiner Kanzleisoftware zusammenarbeiten?",
@@ -87,7 +27,7 @@ const faqs = [
   },
   {
     q: "Was passiert, wenn der Bot eine Frage nicht beantworten kann?",
-    a: "Bei komplexen oder sensiblen Anliegen leitet der Bot den Anruf nahtlos an einen Mitarbeiter weiter. Der Mandant merkt kaum einen Unterschied.",
+    a: "Bei komplexen oder sensiblen Anliegen leitet der Bot den Anruf nahtlos an einen Mitarbeiter weiter. Der Mandant merkt kaum einen Unterschied — und Ihr Team erhält alle relevanten Infos vorab.",
   },
 ];
 
@@ -109,102 +49,168 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
-      {/* Hero */}
-      <section className="pt-28 pb-20 px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-5xl text-center">
-          <p className="text-sm font-semibold tracking-widest uppercase text-primary mb-4">
-            KI-Telefonie für Steuerkanzleien
-          </p>
-          <h1 className="font-headline text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
-            <span className="text-gradient-brand">Ihr KI-Telefonbot</span>
-            <br />
-            für Steuerkanzleien
-          </h1>
-          <p className="mt-6 text-lg sm:text-xl text-on-surface-variant max-w-2xl mx-auto">
-            Wir bauen Ihren intelligenten Telefonassistenten — DSGVO-konform,
-            steuergeheimniskonform, voll integriert. Sie müssen sich um nichts
-            kümmern.
-          </p>
-          <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/kontakt"
-              className="cta-gradient text-on-primary font-semibold px-8 py-3.5 rounded-full text-lg hover:opacity-90 transition-opacity"
-            >
-              Kostenloses Erstgespräch vereinbaren
-            </Link>
-            <Link
-              href="/check"
-              className="border-2 border-primary text-primary font-semibold px-8 py-3.5 rounded-full text-lg hover:bg-primary/5 transition-colors"
-            >
-              Kosten-Rechner starten
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Trust bar */}
-      <section className="py-8 bg-surface-container-low border-y border-outline-variant/30">
-        <div className="mx-auto max-w-5xl px-4 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-          {trustItems.map((t) => (
-            <div key={t.label} className="flex flex-col items-center gap-2">
-              <span className="material-symbols-outlined text-3xl text-primary">
-                {t.icon}
+      {/* ── Hero ── */}
+      <section className="relative overflow-hidden px-6 lg:px-8 py-24 md:py-32">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          {/* Left column */}
+          <div className="z-10 text-left">
+            <h1 className="font-headline text-5xl md:text-7xl leading-[1.1] text-on-surface mb-6">
+              Ihr KI-Telefonbot für Steuerkanzleien:{" "}
+              <span className="italic text-gradient-brand">
+                Entlastung, die ankommt.
               </span>
-              <span className="text-sm font-medium text-on-surface-variant">
-                {t.label}
-              </span>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Problem */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-5xl">
-          <h2 className="font-headline text-3xl sm:text-4xl font-bold text-center">
-            Das Problem:{" "}
-            <em className="text-primary">Steuerkanzleien am Limit</em>
-          </h2>
-          <p className="mt-4 text-center text-on-surface-variant max-w-2xl mx-auto">
-            Die Steuerbranche steht unter Druck — Fachkräftemangel,
-            steigende Mandantenansprüche und ein Telefon, das nicht stillsteht.
-          </p>
-          <div className="mt-12 grid md:grid-cols-3 gap-8">
-            {[
-              {
-                stat: "64,6 %",
-                label: "der Kanzleien leiden unter Fachkräftemangel",
-                source: "BStBK-Umfrage 2024",
-              },
-              {
-                stat: "3 Std.",
-                label: "pro Tag verbringt eine Kanzlei-Mitarbeiterin am Telefon",
-                source: "DATEV-Studie",
-              },
-              {
-                stat: "59 %",
-                label: "der Mandanten legen auf, wenn niemand abnimmt",
-                source: "Branchenstudie Telefonie",
-              },
-            ].map((s) => (
-              <div
-                key={s.stat}
-                className="bg-surface-container rounded-2xl p-8 text-center"
+            </h1>
+            <p className="text-on-secondary-container text-lg md:text-xl max-w-xl mb-10 leading-relaxed">
+              Wir bauen, konfigurieren und betreuen Ihren KI-Telefonbot. Sie
+              kümmern sich um Ihre Mandanten — wir kümmern uns um den Rest.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Link
+                href="/kontakt"
+                className="cta-gradient px-8 py-4 rounded-full text-white text-lg font-medium shadow-xl shadow-blue-900/20 hover:opacity-95 transition-all transform active:scale-95 text-center"
               >
-                <p className="font-headline text-4xl font-bold text-primary">
-                  {s.stat}
-                </p>
-                <p className="mt-2 text-on-surface-variant">{s.label}</p>
-                <p className="mt-1 text-xs text-outline">{s.source}</p>
+                Kostenloses Erstgespräch vereinbaren
+              </Link>
+              <Link
+                href="/demo"
+                className="px-8 py-4 rounded-full bg-surface-container-high text-on-surface text-lg font-medium hover:bg-slate-200 transition-all text-center"
+              >
+                Demo anhören
+              </Link>
+            </div>
+
+            {/* Social proof: stacked avatars */}
+            <div className="mt-10 flex items-center gap-4">
+              <div className="flex -space-x-3">
+                {[1, 2, 3, 4, 5].map((n) => (
+                  <Image
+                    key={n}
+                    src={`/images/avatar-${n}.webp`}
+                    alt={`Kanzlei ${n}`}
+                    width={40}
+                    height={40}
+                    className="w-10 h-10 rounded-full border-2 border-white object-cover"
+                  />
+                ))}
+                <span className="flex items-center justify-center w-10 h-10 rounded-full border-2 border-white bg-primary text-white text-xs font-semibold">
+                  +250
+                </span>
               </div>
-            ))}
+              <div>
+                <p className="text-sm font-semibold text-on-surface">
+                  Vertrauensvolle Kanzleien
+                </p>
+                <div className="flex gap-0.5 text-amber-400">
+                  {[...Array(5)].map((_, i) => (
+                    <span
+                      key={i}
+                      className="material-symbols-outlined text-lg"
+                      style={{
+                        fontVariationSettings: "'FILL' 1",
+                      }}
+                    >
+                      star
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Right column: Hero image + floating quote */}
+          <div className="relative">
+            <div className="relative rounded-2xl overflow-hidden aspect-[4/5] shadow-2xl transform lg:translate-x-12 ring-1 ring-slate-200">
+              <Image
+                src="/images/hero-woman.webp"
+                alt="Steuerberaterin in moderner Kanzlei"
+                fill
+                className="object-cover"
+                priority
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/20 to-transparent" />
+            </div>
+            <div className="absolute -bottom-6 -left-6 md:-left-12 p-8 glass-nav rounded-2xl shadow-xl max-w-xs border border-slate-200">
+              <p className="font-headline text-2xl italic text-primary mb-2">
+                &ldquo;Endlich Ruhe für komplexe Fälle.&rdquo;
+              </p>
+              <p className="text-sm text-on-secondary-container">
+                — Dr. Elena Schmidt, Steuerberaterin
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Quiz teaser */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-4xl cta-gradient rounded-3xl p-10 sm:p-14 text-center text-on-primary">
+      {/* ── Features ── */}
+      <section className="bg-surface-container-low py-24 md:py-32">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="mb-16 text-center max-w-2xl mx-auto">
+            <h2 className="font-headline text-4xl md:text-5xl text-on-surface mb-4">
+              Full-Service statt Selbstbau
+            </h2>
+            <p className="text-on-secondary-container">
+              Wir übernehmen die komplette Einrichtung, Konfiguration und
+              Betreuung — Sie lehnen sich zurück.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* Card 1 */}
+            <div className="bg-surface-container-lowest p-8 rounded-3xl transition-transform hover:-translate-y-1 shadow-sm border border-slate-100">
+              <div className="w-12 h-12 rounded-2xl bg-blue-50 flex items-center justify-center mb-6">
+                <span className="material-symbols-outlined text-primary text-3xl">
+                  schedule
+                </span>
+              </div>
+              <h3 className="font-headline text-2xl text-on-surface mb-3">
+                Rund um die Uhr erreichbar
+              </h3>
+              <p className="text-on-secondary-container leading-relaxed">
+                Ihr KI-Bot nimmt Anrufe 24/7 an — auch nach Feierabend, am
+                Wochenende und in der Urlaubszeit. Kein Mandant geht mehr
+                verloren.
+              </p>
+            </div>
+
+            {/* Card 2 */}
+            <div className="bg-surface-container-lowest p-8 rounded-3xl transition-transform hover:-translate-y-1 shadow-sm border border-slate-100">
+              <div className="w-12 h-12 rounded-2xl bg-blue-50 flex items-center justify-center mb-6">
+                <span className="material-symbols-outlined text-primary text-3xl">
+                  shield
+                </span>
+              </div>
+              <h3 className="font-headline text-2xl text-on-surface mb-3">
+                🇩🇪 Hosting in Deutschland
+              </h3>
+              <p className="text-on-secondary-container leading-relaxed">
+                Deutsche Server, volle DSGVO-Konformität und Schutz des
+                Steuergeheimnisses nach §203 StGB. Ihre Mandantendaten bleiben
+                sicher.
+              </p>
+            </div>
+
+            {/* Card 3 */}
+            <div className="bg-surface-container-lowest p-8 rounded-3xl transition-transform hover:-translate-y-1 shadow-sm border border-slate-100">
+              <div className="w-12 h-12 rounded-2xl bg-blue-50 flex items-center justify-center mb-6">
+                <span className="material-symbols-outlined text-primary text-3xl">
+                  handshake
+                </span>
+              </div>
+              <h3 className="font-headline text-2xl text-on-surface mb-3">
+                Full-Service von A bis Z
+              </h3>
+              <p className="text-on-secondary-container leading-relaxed">
+                Wir bauen, konfigurieren und betreuen Ihren KI-Telefonbot
+                komplett. Sie müssen nichts selbst einrichten — das ist unser
+                Job.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Quiz Teaser ── */}
+      <section className="py-16 px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto cta-gradient rounded-3xl p-10 sm:p-14 text-center text-white">
           <h2 className="font-headline text-3xl sm:text-4xl font-bold">
             Was kosten Sie verpasste Mandantenanrufe?
           </h2>
@@ -221,125 +227,82 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Features */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-surface-container-low">
-        <div className="mx-auto max-w-5xl">
-          <h2 className="font-headline text-3xl sm:text-4xl font-bold text-center">
-            Warum <em className="text-primary">unser</em> KI-Telefonbot?
-          </h2>
-          <div className="mt-12 grid md:grid-cols-3 gap-8">
-            {features.map((f) => (
-              <div
-                key={f.title}
-                className="bg-surface-container-lowest rounded-2xl p-8 shadow-sm"
-              >
-                <span className="material-symbols-outlined text-4xl text-primary">
-                  {f.icon}
-                </span>
-                <h3 className="font-headline text-xl font-semibold mt-4">
-                  {f.title}
-                </h3>
-                <p className="mt-2 text-on-surface-variant">{f.text}</p>
+      {/* ── Benefits ── */}
+      <section className="py-24 md:py-32 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="flex flex-col lg:flex-row items-center gap-16">
+            {/* Image left */}
+            <div className="w-full lg:w-1/2 order-2 lg:order-1">
+              <div className="relative">
+                <Image
+                  src="/images/office-lobby.webp"
+                  alt="Moderne Kanzlei-Lobby"
+                  width={800}
+                  height={450}
+                  className="rounded-3xl shadow-lg w-full object-cover aspect-[16/9] ring-1 ring-slate-100"
+                />
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
+            </div>
 
-      {/* Benefits */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-5xl grid md:grid-cols-2 gap-12 items-center">
-          <div>
-            <h2 className="font-headline text-3xl sm:text-4xl font-bold">
-              Das bringt der Bot{" "}
-              <em className="text-primary">Ihrer Kanzlei</em>
-            </h2>
-            <ul className="mt-8 space-y-4">
-              {benefits.map((b) => (
-                <li key={b} className="flex items-start gap-3">
-                  <span className="material-symbols-outlined text-primary mt-0.5">
+            {/* Checklist right */}
+            <div className="w-full lg:w-1/2 order-1 lg:order-2">
+              <span className="text-primary font-medium tracking-widest uppercase text-xs mb-4 block">
+                Der Vorsprung
+              </span>
+              <h2 className="font-headline text-4xl md:text-5xl text-on-surface mb-6 leading-tight">
+                Warum Kanzleien uns vertrauen
+              </h2>
+              <ul className="space-y-6">
+                <li className="flex items-start gap-4">
+                  <span className="material-symbols-outlined text-primary">
                     check_circle
                   </span>
-                  <span className="text-on-surface-variant">{b}</span>
+                  <div>
+                    <h4 className="font-semibold text-on-surface">
+                      Keine Konfiguration nötig
+                    </h4>
+                    <p className="text-on-secondary-container">
+                      Wir richten alles ein — von der Telefonanlage bis zur
+                      Kanzleisoftware-Integration. Sie müssen keinen Finger
+                      rühren.
+                    </p>
+                  </div>
                 </li>
-              ))}
-            </ul>
-          </div>
-          <div className="bg-surface-container rounded-3xl p-10 text-center">
-            <span className="material-symbols-outlined text-7xl text-primary/30">
-              phone_in_talk
-            </span>
-            <p className="mt-4 font-headline text-2xl font-semibold">
-              Bis zu 70 % weniger Telefonlast
-            </p>
-            <p className="mt-2 text-on-surface-variant">
-              Ihr Team kann sich auf die fachliche Arbeit konzentrieren — der
-              Bot kümmert sich um den Rest.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* How it works */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-surface-container-low">
-        <div className="mx-auto max-w-5xl">
-          <h2 className="font-headline text-3xl sm:text-4xl font-bold text-center">
-            In drei Schritten <em className="text-primary">zur Kanzlei der Zukunft</em>
-          </h2>
-          <div className="mt-12 grid md:grid-cols-3 gap-8">
-            {steps.map((s) => (
-              <div key={s.nr} className="text-center">
-                <div className="inline-flex w-16 h-16 items-center justify-center rounded-full bg-primary text-on-primary font-headline text-2xl font-bold">
-                  {s.nr}
-                </div>
-                <h3 className="font-headline text-xl font-semibold mt-4">
-                  {s.title}
-                </h3>
-                <p className="mt-2 text-on-surface-variant">{s.text}</p>
-              </div>
-            ))}
+                <li className="flex items-start gap-4">
+                  <span className="material-symbols-outlined text-primary">
+                    check_circle
+                  </span>
+                  <div>
+                    <h4 className="font-semibold text-on-surface">
+                      Branchenexperten statt generische KI
+                    </h4>
+                    <p className="text-on-secondary-container">
+                      Unser Bot ist spezialisiert auf Steuerberater — er kennt
+                      die Fachbegriffe, Fristen und typischen Mandantenanliegen.
+                    </p>
+                  </div>
+                </li>
+                <li className="flex items-start gap-4">
+                  <span className="material-symbols-outlined text-primary">
+                    check_circle
+                  </span>
+                  <div>
+                    <h4 className="font-semibold text-on-surface">
+                      Persönlicher Ansprechpartner
+                    </h4>
+                    <p className="text-on-secondary-container">
+                      Kein Ticket-System, kein Warteschleifen-Support. Ein
+                      Mensch, der sich um Ihre Kanzlei kümmert.
+                    </p>
+                  </div>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* DSGVO */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-4xl">
-          <div className="flex items-center gap-4 justify-center mb-8">
-            <span className="material-symbols-outlined text-5xl text-primary">
-              shield
-            </span>
-            <h2 className="font-headline text-3xl sm:text-4xl font-bold">
-              DSGVO &amp; <em className="text-primary">Steuergeheimnis</em>
-            </h2>
-          </div>
-          <p className="text-center text-on-surface-variant max-w-2xl mx-auto">
-            Datenschutz ist für Steuerkanzleien nicht verhandelbar. Unser Bot
-            erfüllt alle Anforderungen — von der DSGVO bis zum
-            Steuergeheimnis nach §203 StGB.
-          </p>
-          <div className="mt-10 grid sm:grid-cols-2 gap-4 max-w-2xl mx-auto">
-            {dsgvoChecks.map((c) => (
-              <div key={c} className="flex items-start gap-3">
-                <span className="material-symbols-outlined text-primary mt-0.5">
-                  check
-                </span>
-                <span className="text-sm text-on-surface-variant">{c}</span>
-              </div>
-            ))}
-          </div>
-          <div className="mt-8 text-center">
-            <Link
-              href="/datenschutz-ki-telefonie"
-              className="text-primary font-semibold hover:underline"
-            >
-              Mehr zu DSGVO &amp; KI-Telefonie erfahren &rarr;
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ */}
+      {/* ── FAQ ── */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-surface-container-low">
         <div className="mx-auto max-w-3xl">
           <h2 className="font-headline text-3xl sm:text-4xl font-bold text-center mb-12">
@@ -364,22 +327,27 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-4xl cta-gradient rounded-3xl p-10 sm:p-14 text-center text-on-primary">
-          <h2 className="font-headline text-3xl sm:text-4xl font-bold">
-            Bereit für die Kanzlei der Zukunft?
-          </h2>
-          <p className="mt-4 text-lg opacity-90">
-            Vereinbaren Sie jetzt ein kostenloses Erstgespräch — wir zeigen
-            Ihnen, wie der KI-Telefonbot Ihre Kanzlei entlastet.
-          </p>
-          <Link
-            href="/kontakt"
-            className="inline-block mt-8 bg-white text-primary font-semibold px-8 py-3.5 rounded-full text-lg hover:bg-white/90 transition-colors"
-          >
-            Kostenloses Erstgespräch vereinbaren
-          </Link>
+      {/* ── CTA ── */}
+      <section className="max-w-7xl mx-auto px-6 mb-24 mt-24">
+        <div className="bg-[#001b3e] text-surface-container-lowest rounded-[2rem] p-12 md:p-20 text-center relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-64 h-64 bg-sky-400/10 rounded-full blur-[100px]" />
+          <div className="absolute bottom-0 left-0 w-64 h-64 bg-primary/10 rounded-full blur-[100px]" />
+          <div className="relative z-10">
+            <h2 className="font-headline text-4xl md:text-6xl mb-8">
+              Bereit für die Kanzlei der Zukunft?
+            </h2>
+            <p className="text-slate-300 text-lg md:text-xl max-w-2xl mx-auto mb-12">
+              Starten Sie noch heute und erleben Sie, wie KI Ihren
+              Arbeitsalltag spürbar entlastet. Unser Team berät Sie
+              individuell.
+            </p>
+            <Link
+              href="/kontakt"
+              className="cta-gradient px-10 py-5 rounded-full text-white text-xl font-medium shadow-2xl shadow-black/20 hover:opacity-95 transition-all transform hover:scale-105 active:scale-95 inline-block"
+            >
+              Jetzt Erstgespräch vereinbaren
+            </Link>
+          </div>
         </div>
       </section>
     </>
