@@ -3,7 +3,7 @@
   "niche": "Steuerberater",
   "nicheDE": "Steuerkanzleien",
   "projectPath": "/Users/hydra-01/Documents/DigiWorkspace/steuerberater-telefonbot",
-  "phase": "deployer",
+  "phase": "complete",
   "phases": {
     "stratege": "done",
     "architekt": "done",
@@ -11,12 +11,17 @@
     "media": "done",
     "integrator": "done",
     "seo-qa": "done",
-    "deployer": "pending"
+    "deployer": "done"
   },
   "outputs": {
     "integrator": {
       "digiletterListId": "cmnhhpi9q0007mz01wlwi908a",
       "sequenceId": "cmnhhqj600009mz01znmghg5x"
+    },
+    "deployer": {
+      "coolifyUuid": "w3482t2tp1038zbgml1z2n4o",
+      "githubRepo": "DigiRift-frontend/steuerberater-telefonbot",
+      "url": "https://steuerberater-telefonbot.de"
     }
   }
 }
