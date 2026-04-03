@@ -42,11 +42,11 @@ const demos = [
     audioSrc: "/audio/demo-terminvergabe.mp3",
   },
   {
-    title: "Allgemeine Auskunft",
+    title: "Öffnungszeiten & Fristen",
     subtitle: "Eingehender Anruf — außerhalb der Sprechzeiten",
     description:
-      "Jemand ruft abends an und fragt nach den Öffnungszeiten und ob die Kanzlei auch Lohnbuchhaltung anbietet. Der Bot beantwortet die Fragen und nimmt einen Rückrufwunsch auf.",
-    duration: "1:18",
+      "Jemand ruft abends an und fragt nach den Öffnungszeiten und wann die Steuererklärung abgegeben werden muss. Der Bot gibt die aktuellen Zeiten und Fristen durch und bietet einen Termin an.",
+    duration: "0:39",
     audioSrc: "/audio/demo-oeffnungszeiten.mp3",
   },
 ];

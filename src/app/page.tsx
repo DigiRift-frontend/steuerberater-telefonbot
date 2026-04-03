@@ -85,7 +85,7 @@ export default function Home() {
                 {[1, 2, 3, 4, 5].map((n) => (
                   <Image
                     key={n}
-                    src={`/images/avatar-${n}.webp`}
+                    src={`/images/avatar-${n}.jpg`}
                     alt={`Kanzlei ${n}`}
                     width={40}
                     height={40}
