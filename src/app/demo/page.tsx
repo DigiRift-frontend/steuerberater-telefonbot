@@ -14,7 +14,7 @@ const demos = [
     subtitle: "Eingehender Anruf — Häufigster Anruf",
     description:
       "Eine Mandantin möchte einen Besprechungstermin vereinbaren. Der Bot prüft die Verfügbarkeiten im Kanzleikalender und bucht direkt ein — inklusive Bestätigungs-SMS.",
-    duration: "1:55",
+    duration: "0:39",
     audioSrc: "/audio/demo-terminvergabe.mp3",
   },
   {
@@ -30,7 +30,7 @@ const demos = [
     subtitle: "Eingehender Anruf — Bestandsmandant",
     description:
       "Ein Mandant möchte wissen, wie der Stand seiner Steuererklärung ist. Der Bot identifiziert ihn und gibt eine aktuelle Auskunft zum Bearbeitungsstatus — ohne dass ein Mitarbeiter unterbrochen wird.",
-    duration: "1:28",
+    duration: "0:38",
     audioSrc: "/audio/demo-status-abfrage.mp3",
   },
   {
@@ -38,7 +38,7 @@ const demos = [
     subtitle: "Eingehender Anruf — Lead-Generierung",
     description:
       "Ein potenzieller Mandant ruft an. Der Bot erfasst strukturiert seine Daten, stellt Vorqualifizierungs-Fragen (Unternehmensform, Branche, Umsatz) und leitet den qualifizierten Lead an den passenden Steuerberater weiter.",
-    duration: "2:15",
+    duration: "0:42",
     audioSrc: "/audio/demo-mandanten-aufnahme.mp3",
   },
   {
@@ -46,7 +46,7 @@ const demos = [
     subtitle: "Ausgehender Anruf — Proaktiv",
     description:
       "Der Bot ruft eine Mandantin an und erinnert sie an die ausstehende Einreichung der Unterlagen für die Einkommensteuererklärung. Er bietet einen Upload-Link per SMS oder E-Mail an.",
-    duration: "1:42",
+    duration: "0:43",
     audioSrc: "/audio/demo-frist-erinnerung.mp3",
   },
 ];
