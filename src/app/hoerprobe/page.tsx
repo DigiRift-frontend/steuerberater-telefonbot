@@ -105,7 +105,7 @@ export default function Demo() {
             Ihre Kanzlei — kostenlos und unverbindlich.
           </p>
           <Link
-            href="/kontakt"
+            href="/beratung"
             className="inline-block mt-8 bg-white text-primary font-semibold px-8 py-3.5 rounded-full text-lg hover:bg-white/90 transition-colors"
           >
             Kostenloses Erstgespräch vereinbaren

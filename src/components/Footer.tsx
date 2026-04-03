@@ -30,19 +30,19 @@ export function Footer() {
             Impressum
           </Link>
           <Link
-            href="/kontakt"
+            href="/beratung"
             className="text-slate-500 hover:text-primary transition-colors font-body text-sm tracking-wide"
           >
             Kontakt
           </Link>
           <Link
-            href="/datenschutz-ki-telefonie"
+            href="/compliance"
             className="text-slate-500 hover:text-primary transition-colors font-body text-sm tracking-wide"
           >
             DSGVO &amp; KI-Telefonie
           </Link>
           <Link
-            href="/ratgeber"
+            href="/leitfaden"
             className="text-slate-500 hover:text-primary transition-colors font-body text-sm tracking-wide"
           >
             Ratgeber

@@ -5,11 +5,11 @@ import Link from "next/link";
 
 const links = [
   { href: "/", label: "Home" },
-  { href: "/check", label: "Kosten-Rechner" },
-  { href: "/anwendungsfaelle", label: "Anwendungsfälle" },
-  { href: "/demo", label: "Demo" },
+  { href: "/rechner", label: "Rechner" },
+  { href: "/leistungen", label: "Leistungen" },
+  { href: "/hoerprobe", label: "Hörprobe" },
   { href: "/blog", label: "Blog" },
-  { href: "/kontakt", label: "Kontakt" },
+  { href: "/beratung", label: "Beratung" },
 ];
 
 export function Navbar() {
@@ -39,7 +39,7 @@ export function Navbar() {
         <div className="flex items-center gap-4">
           {/* CTA */}
           <Link
-            href="/kontakt"
+            href="/beratung"
             className="hidden md:inline-block cta-gradient px-6 py-2.5 rounded-full text-white font-medium shadow-lg shadow-blue-900/10 hover:opacity-95 transition-opacity transform active:scale-95 duration-200 ease-in-out"
           >
             Erstgespräch vereinbaren
@@ -74,7 +74,7 @@ export function Navbar() {
               </Link>
             ))}
             <Link
-              href="/kontakt"
+              href="/beratung"
               onClick={() => setOpen(false)}
               className="cta-gradient text-white font-medium px-6 py-2.5 rounded-full text-center mt-2 hover:opacity-95 transition-opacity"
             >

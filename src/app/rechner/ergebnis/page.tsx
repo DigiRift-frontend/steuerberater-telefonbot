@@ -40,7 +40,7 @@ function ErgebnisContent() {
       return;
     }
 
-    fetch("/api/quiz-verify", {
+    fetch("/api/rechner-verify", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ token }),
@@ -86,7 +86,7 @@ function ErgebnisContent() {
           Bitte starten Sie den Kosten-Rechner erneut.
         </p>
         <Link
-          href="/check"
+          href="/rechner"
           className="cta-gradient text-on-primary font-semibold px-8 py-3.5 rounded-full hover:opacity-90 transition-opacity"
         >
           Kosten-Rechner starten
@@ -203,7 +203,7 @@ function ErgebnisContent() {
             in Ihrer Kanzlei eingesetzt werden kann.
           </p>
           <Link
-            href="/kontakt"
+            href="/beratung"
             className="inline-block mt-8 bg-white text-primary font-semibold px-8 py-3.5 rounded-full text-lg hover:bg-white/90 transition-colors"
           >
             Kostenloses Erstgespräch vereinbaren

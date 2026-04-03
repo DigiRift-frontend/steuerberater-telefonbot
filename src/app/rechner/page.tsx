@@ -93,7 +93,7 @@ export default function Check() {
     const score = computeScore();
 
     try {
-      const res = await fetch("/api/quiz-submit", {
+      const res = await fetch("/api/rechner-submit", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

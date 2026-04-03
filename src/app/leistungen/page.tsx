@@ -192,7 +192,7 @@ export default function Anwendungsfaelle() {
             Szenarien den größten Effekt für Ihre Kanzlei haben.
           </p>
           <Link
-            href="/kontakt"
+            href="/beratung"
             className="inline-block mt-8 bg-white text-primary font-semibold px-8 py-3.5 rounded-full text-lg hover:bg-white/90 transition-colors"
           >
             Kostenloses Erstgespräch vereinbaren

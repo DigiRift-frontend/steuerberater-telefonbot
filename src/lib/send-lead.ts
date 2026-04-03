@@ -8,7 +8,7 @@ export function getClientInfo() {
 }
 
 export async function sendLead(data: Record<string, unknown>) {
-  return fetch("/api/lead", {
+  return fetch("/api/anfrage", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ ...data, ...getClientInfo() }),

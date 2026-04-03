@@ -33,7 +33,7 @@ function DownloadContent() {
       return;
     }
 
-    fetch("/api/ebook-verify", {
+    fetch("/api/leitfaden-verify", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ token }),
@@ -76,7 +76,7 @@ function DownloadContent() {
           Bitte fordern Sie den Leitfaden erneut an.
         </p>
         <Link
-          href="/ratgeber"
+          href="/leitfaden"
           className="cta-gradient text-on-primary font-semibold px-8 py-3.5 rounded-full hover:opacity-90 transition-opacity"
         >
           Leitfaden erneut anfordern
@@ -122,7 +122,7 @@ function DownloadContent() {
             Sie ein kostenloses Erstgespräch mit unserem Team.
           </p>
           <Link
-            href="/kontakt"
+            href="/beratung"
             className="cta-gradient text-on-primary font-semibold px-6 py-3 rounded-full hover:opacity-90 transition-opacity"
           >
             Kostenloses Erstgespräch vereinbaren

@@ -27,7 +27,7 @@ export default function Ratgeber() {
 
     setLoading(true);
     try {
-      const res = await fetch("/api/ebook-submit", {
+      const res = await fetch("/api/leitfaden-submit", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, praxisName: kanzlei }),

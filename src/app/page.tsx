@@ -66,13 +66,13 @@ export default function Home() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
-                href="/kontakt"
+                href="/beratung"
                 className="cta-gradient px-8 py-4 rounded-full text-white text-lg font-medium shadow-xl shadow-blue-900/20 hover:opacity-95 transition-all transform active:scale-95 text-center"
               >
                 Kostenloses Erstgespräch vereinbaren
               </Link>
               <Link
-                href="/demo"
+                href="/hoerprobe"
                 className="px-8 py-4 rounded-full bg-surface-container-high text-on-surface text-lg font-medium hover:bg-slate-200 transition-all text-center"
               >
                 Demo anhören
@@ -193,7 +193,7 @@ export default function Home() {
           </div>
           <div className="text-center mt-10">
             <Link
-              href="/anwendungsfaelle"
+              href="/leistungen"
               className="inline-flex items-center gap-2 text-primary font-headline font-semibold hover:underline"
             >
               Alle 8 Anwendungsfälle ansehen
@@ -281,7 +281,7 @@ export default function Home() {
             Ihrer Kanzlei durch verpasste Anrufe entgeht.
           </p>
           <Link
-            href="/check"
+            href="/rechner"
             className="inline-block mt-8 bg-white text-primary font-semibold px-8 py-3.5 rounded-full text-lg hover:bg-white/90 transition-colors"
           >
             Jetzt berechnen
@@ -404,7 +404,7 @@ export default function Home() {
               individuell.
             </p>
             <Link
-              href="/kontakt"
+              href="/beratung"
               className="cta-gradient px-10 py-5 rounded-full text-white text-xl font-medium shadow-2xl shadow-black/20 hover:opacity-95 transition-all transform hover:scale-105 active:scale-95 inline-block"
             >
               Jetzt Erstgespräch vereinbaren

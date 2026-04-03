@@ -7,17 +7,15 @@ const DIGILETTER_LIST_ID = "cmnhhpi9q0007mz01wlwi908a";
 const JWT_SECRET = process.env.QUIZ_JWT_SECRET || "missing-secret";
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://steuerberater-telefonbot.de";
 
-interface QuizSubmitPayload {
+interface EbookSubmitPayload {
   email: string;
   praxisName?: string;
-  name?: string;
-  quizAnswers: Record<string, number>;
-  quizScore: number;
+  newsletterOptIn?: boolean;
 }
 
 export async function POST(request: Request) {
   try {
-    const body: QuizSubmitPayload = await request.json();
+    const body: EbookSubmitPayload = await request.json();
 
     if (!body.email || !body.email.includes("@")) {
       return NextResponse.json({ error: "Ungültige E-Mail-Adresse" }, { status: 400 });
@@ -27,18 +25,13 @@ export async function POST(request: Request) {
       {
         email: body.email,
         praxisName: body.praxisName,
-        quizAnswers: body.quizAnswers,
-        quizScore: body.quizScore,
+        type: "ebook",
       },
       JWT_SECRET,
       { expiresIn: "7d" }
     );
 
-    const resultUrl = `${SITE_URL}/check/ergebnis?t=${token}`;
-
-    const nameParts = (body.name || "").trim().split(" ");
-    const firstName = nameParts[0] || undefined;
-    const lastName = nameParts.length > 1 ? nameParts.slice(1).join(" ") : undefined;
+    const downloadUrl = `${SITE_URL}/leitfaden/download?t=${token}`;
 
     let alreadyConfirmed = false;
 
@@ -52,36 +45,33 @@ export async function POST(request: Request) {
           },
           body: JSON.stringify({
             email: body.email,
-            firstName,
-            lastName,
-            tags: ["steuerberater-telefonbot", "quelle-kostenrechner"],
+            tags: ["steuerberater-telefonbot", "quelle-ebook"],
             listId: DIGILETTER_LIST_ID,
-            redirectUrl: resultUrl,
+            redirectUrl: downloadUrl,
           }),
         });
         const data = await res.json();
-        console.log("[QUIZ-DIGILETTER]", res.status, JSON.stringify(data));
+        console.log("[EBOOK-DIGILETTER]", res.status, JSON.stringify(data));
 
         if (data.status === "confirmed") {
           alreadyConfirmed = true;
         }
       } catch (err) {
-        console.error("[QUIZ-DIGILETTER] Error:", err);
+        console.error("[EBOOK-DIGILETTER] Error:", err);
       }
     }
 
-    console.log("[QUIZ-SUBMIT]", JSON.stringify({
+    console.log("[EBOOK-SUBMIT]", JSON.stringify({
       timestamp: new Date().toISOString(),
       email: body.email,
       praxisName: body.praxisName,
-      quizScore: body.quizScore,
       alreadyConfirmed,
     }));
 
     return NextResponse.json({
       success: true,
       alreadyConfirmed,
-      resultUrl: alreadyConfirmed ? resultUrl : undefined,
+      downloadUrl: alreadyConfirmed ? downloadUrl : undefined,
     });
   } catch {
     return NextResponse.json({ error: "Server-Fehler" }, { status: 500 });
