@@ -142,7 +142,69 @@ export default function Home() {
       </section>
 
       {/* ── Features ── */}
+      {/* ── Top 3 Anwendungsfälle ── */}
       <section className="bg-surface-container-low py-24 md:py-32">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="mb-16 text-center max-w-2xl mx-auto">
+            <h2 className="font-headline text-4xl md:text-5xl text-on-surface mb-4">
+              Was Ihr Telefonbot kann
+            </h2>
+            <p className="text-on-secondary-container">
+              Die drei häufigsten Anwendungsfälle, die zusammen über 60% aller Kanzlei-Anrufe abdecken.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              {
+                icon: "calendar_month",
+                badge: "Häufigster Anruf",
+                title: "Automatische Terminbuchung",
+                text: "Mandanten buchen Beratungstermine rund um die Uhr direkt im Kanzleikalender — auch abends und am Wochenende. Inklusive Bestätigungs-SMS.",
+              },
+              {
+                icon: "schedule",
+                badge: "Zeitersparnis",
+                title: "Fristenauskunft & Erinnerungen",
+                text: "Automatische Auskunft über Abgabefristen und proaktive Erinnerungsanrufe. Kein Mandant verpasst mehr eine Frist.",
+              },
+              {
+                icon: "upload_file",
+                badge: "Saisonale Spitze",
+                title: "Belegeinreichung koordinieren",
+                text: "Der Bot informiert Mandanten über fehlende Unterlagen und sendet sichere Upload-Links per SMS — besonders wertvoll während der Jahresabschluss-Hochphase.",
+              },
+            ].map((uc) => (
+              <div
+                key={uc.title}
+                className="bg-surface-container-lowest p-8 rounded-3xl transition-transform hover:-translate-y-1 shadow-sm border border-slate-100"
+              >
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-12 h-12 rounded-2xl bg-primary/5 flex items-center justify-center">
+                    <span className="material-symbols-outlined text-primary text-3xl">{uc.icon}</span>
+                  </div>
+                  <span className="text-xs font-semibold tracking-wider uppercase text-primary bg-primary/10 px-3 py-1 rounded-full">
+                    {uc.badge}
+                  </span>
+                </div>
+                <h3 className="font-headline text-xl text-on-surface font-bold mb-3">{uc.title}</h3>
+                <p className="text-on-secondary-container leading-relaxed text-sm">{uc.text}</p>
+              </div>
+            ))}
+          </div>
+          <div className="text-center mt-10">
+            <Link
+              href="/anwendungsfaelle"
+              className="inline-flex items-center gap-2 text-primary font-headline font-semibold hover:underline"
+            >
+              Alle 8 Anwendungsfälle ansehen
+              <span className="material-symbols-outlined text-lg">arrow_forward</span>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Full-Service ── */}
+      <section className="py-24 md:py-32">
         <div className="max-w-7xl mx-auto px-6">
           <div className="mb-16 text-center max-w-2xl mx-auto">
             <h2 className="font-headline text-4xl md:text-5xl text-on-surface mb-4">

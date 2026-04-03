@@ -9,73 +9,115 @@ export const metadata: Metadata = {
 
 const useCases = [
   {
-    icon: "notifications_active",
-    badge: "Automatisierung",
-    title: "Frist-Erinnerungen & Unterlagen-Einsammlung",
-    scenario:
-      "Steuererklärungsfristen rücken näher, aber viele Mandanten haben ihre Unterlagen noch nicht eingereicht. Ihr Team müsste jeden einzeln abtelefonieren.",
-    details: [
-      "Bot ruft Mandanten automatisch an und erinnert an offene Fristen",
-      "Fragt ab, welche Unterlagen noch fehlen",
-      "Bietet direkt einen Upload-Link per SMS an",
-      "Eskaliert an Sachbearbeiter, wenn Frist kritisch wird",
-      "Dokumentiert den Kontaktversuch automatisch",
-    ],
-  },
-  {
-    icon: "person_add",
-    badge: "Neugeschäft",
-    title: "Mandanten-Aufnahme & Vorqualifizierung",
-    scenario:
-      "Ein potenzieller Mandant ruft an, aber alle Mitarbeiter sind in Besprechungen. Ohne den Bot: verpasster Anruf, verlorener Mandant.",
-    details: [
-      "Bot begrüßt Anrufer professionell mit Kanzleinamen",
-      "Erfasst Name, Kontaktdaten und Anliegen",
-      "Stellt Vorqualifizierungs-Fragen (Privat/Gewerbe, Umsatzgröße)",
-      "Leitet qualifizierte Leads direkt an den zuständigen Steuerberater",
-      "Versendet automatisch eine Willkommens-E-Mail mit nächsten Schritten",
-    ],
-  },
-  {
-    icon: "query_stats",
-    badge: "Service",
-    title: "Status-Abfragen zu laufenden Vorgängen",
-    scenario:
-      "Mandanten rufen regelmäßig an, um den Status ihrer Steuererklärung, ihres Jahresabschlusses oder eines Einspruchs zu erfragen. Das kostet Ihr Team wertvolle Zeit.",
-    details: [
-      "Bot identifiziert den Mandanten anhand seiner Telefonnummer",
-      "Gibt Auskunft über den aktuellen Bearbeitungsstatus",
-      "Informiert über voraussichtliche Fertigstellungstermine",
-      "Leitet komplexe Rückfragen an den Sachbearbeiter weiter",
-      "Protokolliert die Anfrage für die Kanzlei-Dokumentation",
-    ],
-  },
-  {
     icon: "calendar_month",
-    badge: "Effizienz",
-    title: "Terminvergabe & Vorbereitung",
+    badge: "Häufigster Anruf",
+    title: "Automatische Terminbuchung",
     scenario:
-      "Ein Mandant möchte einen Besprechungstermin. Statt E-Mail-Pingpong oder Rückruf übernimmt der Bot die komplette Terminkoordination.",
+      "Frau Müller ruft abends um 19:30 an, um einen Termin für ihre Einkommensteuererklärung zu vereinbaren. Der Bot prüft die Verfügbarkeit von Steuerberater Herrn Weber, schlägt drei Optionen vor und bucht den Termin — inklusive Bestätigungs-SMS.",
     details: [
-      "Bot prüft Verfügbarkeiten im Kanzleikalender in Echtzeit",
-      "Schlägt passende Termine vor und bucht direkt ein",
+      "Mandanten buchen Beratungstermine rund um die Uhr direkt im Kanzleikalender",
+      "Bot prüft Verfügbarkeiten in Echtzeit und schlägt passende Optionen vor",
       "Versendet Terminbestätigung und Erinnerung per SMS/E-Mail",
-      "Fragt vorab benötigte Unterlagen ab",
+      "Fragt vorab benötigte Unterlagen ab — Mandant kommt vorbereitet",
       "Integriert sich nahtlos mit DATEV und gängigen Kalendersystemen",
     ],
   },
   {
-    icon: "info",
-    badge: "Entlastung",
-    title: "Öffnungszeiten, Fristen & allgemeine Infos",
+    icon: "schedule",
+    badge: "Zeitersparnis",
+    title: "Fristenauskunft & Erinnerungen",
     scenario:
-      "Viele Anrufe betreffen einfache Fragen: Wann hat die Kanzlei geöffnet? Bis wann muss die Steuererklärung abgegeben werden? Diese Routine-Anfragen binden Kapazitäten.",
+      "Herr Schmidt, Einzelunternehmer, ruft an und fragt, bis wann seine Steuererklärung 2025 abgegeben werden muss. Der Bot informiert ihn: 31. Juli 2026 bei Selbstabgabe, 28. Februar 2027 bei Steuerberater-Vertretung — und bietet an, eine Erinnerung 4 Wochen vorher zu senden.",
     details: [
-      "Bot beantwortet Fragen zu Öffnungszeiten und Erreichbarkeit",
-      "Informiert über aktuelle Steuerfristen und Änderungen",
-      "Gibt allgemeine Auskünfte zu Leistungen der Kanzlei",
-      "Verweist bei Bedarf auf die Kanzlei-Website oder das Mandantenportal",
-      "Außerhalb der Sprechzeiten: nimmt Rückrufwünsche entgegen",
+      "Automatische Auskunft über alle relevanten Abgabefristen (ESt, USt-VA, Jahresabschluss)",
+      "Proaktive Erinnerungsanrufe vor nahenden Fristen",
+      "Individuelle Fristen je nach Mandantentyp (Selbstabgabe vs. Steuerberater)",
+      "Eskaliert an Sachbearbeiter, wenn Frist kritisch wird",
+      "Dokumentiert jeden Kontaktversuch automatisch",
+    ],
+  },
+  {
+    icon: "upload_file",
+    badge: "Saisonale Spitze",
+    title: "Belegeinreichung koordinieren",
+    scenario:
+      "Die GmbH-Geschäftsführerin Frau Klein ruft an, weil sie wissen will, welche Belege für den Jahresabschluss noch fehlen. Der Bot gleicht mit der Checkliste ab, nennt die drei fehlenden Positionen (BWA Dezember, Bankbelege Q4, Inventarliste) und sendet ihr einen sicheren Upload-Link.",
+    details: [
+      "Bot informiert Mandanten über fehlende Unterlagen aus der Checkliste",
+      "Sendet sichere Upload-Links per SMS oder E-Mail",
+      "Automatische Erinnerung bei ausstehenden Belegen",
+      "Reduziert Rückfragen an Sachbearbeiter um bis zu 70%",
+      "Besonders wertvoll während der Jahresabschluss-Hochphase (Januar–März)",
+    ],
+  },
+  {
+    icon: "fact_check",
+    badge: "Entlastet das Team",
+    title: "Steuerbescheid-Status abfragen",
+    scenario:
+      "Herr Bauer ruft zum dritten Mal diese Woche an, um zu fragen, ob sein Einkommensteuerbescheid 2024 schon da ist. Der Bot prüft den Status und teilt mit, dass der Bescheid am Vortag eingegangen ist und zur Prüfung beim Sachbearbeiter liegt — ohne dass ein Mitarbeiter unterbrochen wird.",
+    details: [
+      "Bot identifiziert den Mandanten anhand seiner Telefonnummer",
+      "Gibt Auskunft über den aktuellen Bearbeitungsstatus",
+      "Informiert über voraussichtliche Fertigstellungstermine",
+      "Leitet komplexe Rückfragen an den zuständigen Sachbearbeiter weiter",
+      "Protokolliert die Anfrage für die Kanzlei-Dokumentation",
+    ],
+  },
+  {
+    icon: "person_add",
+    badge: "Lead-Generierung",
+    title: "Neu-Mandanten Vorqualifizierung",
+    scenario:
+      "Herr Yilmaz möchte seine neu gegründete UG steuerlich betreuen lassen. Der Bot fragt nach Gründungsdatum, Branche (Gastronomie), Mitarbeiterzahl und aktuellem Umsatz — und leitet den qualifizierten Lead mit allen Daten an die Kanzlei weiter.",
+    details: [
+      "Strukturierte Erfassung: Unternehmensform, Branche, Beratungsbedarf",
+      "Vorqualifizierung nach Kanzlei-Kriterien (Umsatzgröße, Komplexität)",
+      "Automatische Willkommens-E-Mail mit nächsten Schritten",
+      "Kein potenzieller Mandant geht mehr verloren — auch außerhalb der Bürozeiten",
+      "Qualifizierte Leads werden direkt an den passenden Steuerberater weitergeleitet",
+    ],
+  },
+  {
+    icon: "payments",
+    badge: "Hohes Volumen",
+    title: "Lohnbuchhaltung-Anfragen",
+    scenario:
+      "Die Büro-Managerin Frau Richter vom Mandanten „Autohaus Engel" ruft an, weil ein Mitarbeiter eine Verdienstbescheinigung für die Bank braucht. Der Bot nimmt die Anfrage auf, identifiziert den zuständigen Lohnbuchhalter und erstellt ein Ticket mit Priorität.",
+    details: [
+      "Anfragen zu Gehaltsabrechnungen, Krankmeldungen oder Bescheinigungen",
+      "Bot erkennt den Mandanten und ordnet den zuständigen Sachbearbeiter zu",
+      "Erstellt automatisch priorisierte Tickets im Kanzlei-System",
+      "Reduziert Unterbrechungen für das Lohnbuchhaltungs-Team erheblich",
+      "Besonders relevant für Kanzleien mit vielen Lohn-Mandanten",
+    ],
+  },
+  {
+    icon: "call_split",
+    badge: "Mandantenzufriedenheit",
+    title: "Intelligente Weiterleitung an Fachbereiche",
+    scenario:
+      "Frau Dr. Berger, langjährige Mandantin, ruft an. Der Bot erkennt sie anhand der Rufnummer, begrüßt sie namentlich und fragt nach ihrem Anliegen. Da es um eine Erbschaftsteuer-Frage geht, verbindet der Bot direkt zu Frau Koch, der Spezialistin — ohne Warteschleife am Empfang.",
+    details: [
+      "Anrufer-Erkennung anhand der Telefonnummer — persönliche Begrüßung",
+      "Themenbasierte Weiterleitung an den richtigen Fachbereich",
+      "Keine Warteschleife am Empfang — direkter Durchstieg",
+      "Rückruf-Vereinbarung wenn der Ansprechpartner nicht verfügbar ist",
+      "VIP-Mandanten können priorisiert behandelt werden",
+    ],
+  },
+  {
+    icon: "nights_stay",
+    badge: "Saisonale Spitze",
+    title: "24/7 Erreichbarkeit & Saisonspitzen",
+    scenario:
+      "Während der Jahresabschluss-Hochphase im März klingelt das Telefon 40-mal am Tag. Der Bot fängt 70% der Anrufe ab — Terminbuchungen, Fristenauskunft, Belegstatus — und das dreiköpfige Kanzleiteam kann sich auf die Bilanzierung konzentrieren.",
+    details: [
+      "Rund-um-die-Uhr-Erreichbarkeit — auch abends, am Wochenende und an Feiertagen",
+      "Entlastet das Team in Spitzenzeiten (Januar–Juli) erheblich",
+      "Fängt Routine-Anrufe ab, damit Fachkräfte ungestört arbeiten können",
+      "Nimmt Rückrufwünsche entgegen und priorisiert nach Dringlichkeit",
+      "Kein Mandant hört mehr ein Besetztzeichen oder landet auf dem Anrufbeantworter",
     ],
   },
 ];
