@@ -13,8 +13,8 @@ const demos = [
     title: "Terminvergabe",
     subtitle: "Eingehender Anruf — Häufigster Anruf",
     description:
-      "Eine Mandantin möchte einen Besprechungstermin vereinbaren. Der Bot prüft die Verfügbarkeiten im Kanzleikalender und bucht direkt ein — inklusive Bestätigungs-SMS.",
-    duration: "0:39",
+      "Herr Lehmann braucht einen Termin für seine Einkommensteuererklärung. Der Bot prüft den Kalender von Herrn Weber, schlägt drei Optionen vor, bucht den Termin und sendet eine Bestätigungs-SMS.",
+    duration: "1:17",
     audioSrc: "/audio/demo-terminvergabe.mp3",
   },
   {
@@ -29,24 +29,24 @@ const demos = [
     title: "Steuerbescheid-Status",
     subtitle: "Eingehender Anruf — Bestandsmandant",
     description:
-      "Ein Mandant möchte wissen, wie der Stand seiner Steuererklärung ist. Der Bot identifiziert ihn und gibt eine aktuelle Auskunft zum Bearbeitungsstatus — ohne dass ein Mitarbeiter unterbrochen wird.",
-    duration: "0:38",
+      "Herr Bauer fragt nach dem Stand seiner Steuererklärung. Der Bot schaut in die Akte, informiert ihn dass der Bescheid gestern eingegangen ist und bei Sachbearbeiter Herrn Fischer zur Prüfung liegt.",
+    duration: "1:08",
     audioSrc: "/audio/demo-status-abfrage.mp3",
   },
   {
     title: "Neu-Mandanten Aufnahme",
     subtitle: "Eingehender Anruf — Lead-Generierung",
     description:
-      "Ein potenzieller Mandant ruft an. Der Bot erfasst strukturiert seine Daten, stellt Vorqualifizierungs-Fragen (Unternehmensform, Branche, Umsatz) und leitet den qualifizierten Lead an den passenden Steuerberater weiter.",
-    duration: "0:42",
+      "Herr Yilmaz hat eine UG gegründet und sucht einen Steuerberater. Der Bot erfasst Branche (Gastronomie), Mitarbeiterzahl und Bedarf, leitet den Lead an die Spezialistin für Existenzgründer weiter und sendet eine Willkommens-E-Mail.",
+    duration: "1:29",
     audioSrc: "/audio/demo-mandanten-aufnahme.mp3",
   },
   {
     title: "Frist-Erinnerung",
     subtitle: "Ausgehender Anruf — Proaktiv",
     description:
-      "Der Bot ruft eine Mandantin an und erinnert sie an die ausstehende Einreichung der Unterlagen für die Einkommensteuererklärung. Er bietet einen Upload-Link per SMS oder E-Mail an.",
-    duration: "0:43",
+      "Der Bot ruft Frau Meier an und erinnert sie an zwei fehlende Unterlagen für die Einkommensteuererklärung. Er nennt die Frist und sendet einen sicheren Upload-Link per SMS und E-Mail.",
+    duration: "1:17",
     audioSrc: "/audio/demo-frist-erinnerung.mp3",
   },
 ];
