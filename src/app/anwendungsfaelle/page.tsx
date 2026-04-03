@@ -83,7 +83,7 @@ const useCases = [
     badge: "Hohes Volumen",
     title: "Lohnbuchhaltung-Anfragen",
     scenario:
-      "Die Büro-Managerin Frau Richter vom Mandanten „Autohaus Engel" ruft an, weil ein Mitarbeiter eine Verdienstbescheinigung für die Bank braucht. Der Bot nimmt die Anfrage auf, identifiziert den zuständigen Lohnbuchhalter und erstellt ein Ticket mit Priorität.",
+      "Die Büro-Managerin Frau Richter vom Mandanten Autohaus Engel ruft an, weil ein Mitarbeiter eine Verdienstbescheinigung für die Bank braucht. Der Bot nimmt die Anfrage auf, identifiziert den zuständigen Lohnbuchhalter und erstellt ein Ticket mit Priorität.",
     details: [
       "Anfragen zu Gehaltsabrechnungen, Krankmeldungen oder Bescheinigungen",
       "Bot erkennt den Mandanten und ordnet den zuständigen Sachbearbeiter zu",
