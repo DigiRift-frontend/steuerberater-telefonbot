@@ -7,10 +7,10 @@ export function Footer() {
         {/* Left: Brand + Copyright */}
         <div className="space-y-4">
           <div className="text-xl font-headline font-bold text-primary">
-            Steuerberater AI
+            steuerberater-telefonbot.de
           </div>
           <p className="font-body text-sm tracking-wide text-slate-500">
-            &copy; {new Date().getFullYear()} Steuerberater AI. Ein Service der
+            &copy; {new Date().getFullYear()} steuerberater-telefonbot.de. Ein Service der
             DigiRift GmbH.
           </p>
         </div>

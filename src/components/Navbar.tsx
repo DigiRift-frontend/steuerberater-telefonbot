@@ -20,7 +20,7 @@ export function Navbar() {
       <div className="flex justify-between items-center max-w-7xl mx-auto px-6 py-4">
         {/* Brand */}
         <Link href="/" className="font-headline italic text-primary text-2xl">
-          Steuerberater AI
+          steuerberater-telefonbot.de
         </Link>
 
         {/* Desktop links */}

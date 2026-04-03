@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "KI-Telefonbot für Steuerkanzleien | Steuerberater AI",
+  title: "KI-Telefonbot für Steuerkanzleien | steuerberater-telefonbot.de",
   description:
     "Der intelligente KI-Telefonbot für Steuerkanzleien. 24/7 Erreichbarkeit, DSGVO-konform, Full-Service — wir bauen, konfigurieren und betreuen Ihren Bot.",
 };
