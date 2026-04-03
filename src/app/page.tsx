@@ -289,6 +289,39 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── Ratgeber / E-Book Teaser ── */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-5xl mx-auto bg-surface-container-lowest rounded-3xl shadow-sm overflow-hidden">
+          <div className="flex flex-col md:flex-row items-center gap-0">
+            <div className="w-full md:w-2/5 cta-gradient p-10 md:p-12 text-center md:text-left">
+              <span className="material-symbols-outlined text-white/80 text-5xl mb-4">menu_book</span>
+              <h3 className="font-headline text-2xl font-bold text-white mb-2">
+                Kostenloser Leitfaden
+              </h3>
+              <p className="text-white/70 text-sm">
+                PDF · 8 Seiten · Sofort herunterladen
+              </p>
+            </div>
+            <div className="w-full md:w-3/5 p-8 md:p-12">
+              <h2 className="font-headline text-2xl font-bold text-on-surface mb-3">
+                DSGVO & Steuergeheimnis bei KI-Telefonie
+              </h2>
+              <p className="text-on-secondary-container mb-6 leading-relaxed">
+                Alles was Sie als Kanzleiinhaber über Datenschutz, AV-Verträge und den EU-AI-Act
+                wissen müssen — verständlich erklärt, mit konkreten Checklisten.
+              </p>
+              <Link
+                href="/ratgeber"
+                className="inline-flex items-center gap-2 cta-gradient px-6 py-3 rounded-full text-white font-semibold hover:opacity-95 transition-all"
+              >
+                <span className="material-symbols-outlined text-lg">download</span>
+                Leitfaden herunterladen
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ── Benefits ── */}
       <section className="py-24 md:py-32 overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
