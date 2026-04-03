@@ -10,44 +10,44 @@ export const metadata: Metadata = {
 
 const demos = [
   {
-    title: "Frist-Erinnerung",
-    subtitle: "Ausgehender Anruf",
-    description:
-      "Der Bot ruft eine Mandantin an und erinnert sie an die ausstehende Einreichung der Unterlagen für die Einkommensteuererklärung. Er bietet einen Upload-Link per SMS an.",
-    duration: "1:42",
-    audioSrc: "/audio/demo-frist-erinnerung.mp3",
-  },
-  {
-    title: "Mandanten-Aufnahme",
-    subtitle: "Eingehender Anruf — Neukunde",
-    description:
-      "Ein potenzieller Mandant ruft an und möchte sich über die Kanzlei informieren. Der Bot erfasst seine Daten, stellt Vorqualifizierungs-Fragen und leitet den Lead weiter.",
-    duration: "2:15",
-    audioSrc: "/audio/demo-mandanten-aufnahme.mp3",
-  },
-  {
-    title: "Status-Abfrage",
-    subtitle: "Eingehender Anruf — Bestandsmandant",
-    description:
-      "Ein Mandant möchte wissen, wie der Stand seiner Steuererklärung ist. Der Bot identifiziert ihn und gibt eine aktuelle Auskunft zum Bearbeitungsstatus.",
-    duration: "1:28",
-    audioSrc: "/audio/demo-status-abfrage.mp3",
-  },
-  {
     title: "Terminvergabe",
-    subtitle: "Eingehender Anruf",
+    subtitle: "Eingehender Anruf — Häufigster Anruf",
     description:
-      "Eine Mandantin möchte einen Besprechungstermin vereinbaren. Der Bot prüft die Verfügbarkeiten und bucht direkt im Kanzleikalender ein.",
+      "Eine Mandantin möchte einen Besprechungstermin vereinbaren. Der Bot prüft die Verfügbarkeiten im Kanzleikalender und bucht direkt ein — inklusive Bestätigungs-SMS.",
     duration: "1:55",
     audioSrc: "/audio/demo-terminvergabe.mp3",
   },
   {
-    title: "Öffnungszeiten & Fristen",
-    subtitle: "Eingehender Anruf — außerhalb der Sprechzeiten",
+    title: "Belegeinreichung koordinieren",
+    subtitle: "Eingehender Anruf — Saisonale Spitze",
     description:
-      "Jemand ruft abends an und fragt nach den Öffnungszeiten und wann die Steuererklärung abgegeben werden muss. Der Bot gibt die aktuellen Zeiten und Fristen durch und bietet einen Termin an.",
-    duration: "0:39",
-    audioSrc: "/audio/demo-oeffnungszeiten.mp3",
+      "Ein Mandant fragt, welche Unterlagen für den Jahresabschluss noch fehlen. Der Bot gleicht mit der Checkliste ab, nennt die offenen Positionen und sendet einen sicheren Upload-Link per SMS oder E-Mail.",
+    duration: "1:19",
+    audioSrc: "/audio/demo-belegeinreichung.mp3",
+  },
+  {
+    title: "Steuerbescheid-Status",
+    subtitle: "Eingehender Anruf — Bestandsmandant",
+    description:
+      "Ein Mandant möchte wissen, wie der Stand seiner Steuererklärung ist. Der Bot identifiziert ihn und gibt eine aktuelle Auskunft zum Bearbeitungsstatus — ohne dass ein Mitarbeiter unterbrochen wird.",
+    duration: "1:28",
+    audioSrc: "/audio/demo-status-abfrage.mp3",
+  },
+  {
+    title: "Neu-Mandanten Aufnahme",
+    subtitle: "Eingehender Anruf — Lead-Generierung",
+    description:
+      "Ein potenzieller Mandant ruft an. Der Bot erfasst strukturiert seine Daten, stellt Vorqualifizierungs-Fragen (Unternehmensform, Branche, Umsatz) und leitet den qualifizierten Lead an den passenden Steuerberater weiter.",
+    duration: "2:15",
+    audioSrc: "/audio/demo-mandanten-aufnahme.mp3",
+  },
+  {
+    title: "Frist-Erinnerung",
+    subtitle: "Ausgehender Anruf — Proaktiv",
+    description:
+      "Der Bot ruft eine Mandantin an und erinnert sie an die ausstehende Einreichung der Unterlagen für die Einkommensteuererklärung. Er bietet einen Upload-Link per SMS oder E-Mail an.",
+    duration: "1:42",
+    audioSrc: "/audio/demo-frist-erinnerung.mp3",
   },
 ];
 
