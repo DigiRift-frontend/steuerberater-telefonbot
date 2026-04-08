@@ -270,25 +270,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Quiz Teaser ── */}
-      <section className="py-16 px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto cta-gradient rounded-3xl p-10 sm:p-14 text-center text-white">
-          <h2 className="font-headline text-3xl sm:text-4xl font-bold">
-            Was kosten Sie verpasste Mandantenanrufe?
-          </h2>
-          <p className="mt-4 text-lg opacity-90">
-            Unser Kosten-Rechner zeigt Ihnen in 60 Sekunden, wie viel Umsatz
-            Ihrer Kanzlei durch verpasste Anrufe entgeht.
-          </p>
-          <Link
-            href="/rechner"
-            className="inline-block mt-8 bg-white text-primary font-semibold px-8 py-3.5 rounded-full text-lg hover:bg-white/90 transition-colors"
-          >
-            Jetzt berechnen
-          </Link>
-        </div>
-      </section>
-
       {/* ── Ratgeber / E-Book Teaser ── */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto bg-surface-container-lowest rounded-3xl shadow-sm overflow-hidden">
