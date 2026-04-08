@@ -21,8 +21,8 @@ const demos = [
     title: "Belegeinreichung koordinieren",
     subtitle: "Eingehender Anruf — Saisonale Spitze",
     description:
-      "Herr Berger von der Berger Consulting GmbH fragt, welche Unterlagen für den Jahresabschluss noch fehlen. Der Bot identifiziert den Mandanten über die Steuernummer, gleicht mit der Checkliste ab und sendet einen sicheren Upload-Link per E-Mail.",
-    duration: "1:29",
+      "Herr Berger von der Berger Consulting ruft an. Der Bot erkennt ihn automatisch über die Rufnummer, prüft die Akte und sendet eine E-Mail mit der Checkliste fehlender Unterlagen und einem sicheren Upload-Link — DSGVO-konform, ohne Details am Telefon.",
+    duration: "1:09",
     audioSrc: "/audio/demo-belegeinreichung.mp3",
   },
   {
