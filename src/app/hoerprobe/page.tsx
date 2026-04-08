@@ -14,15 +14,15 @@ const demos = [
     subtitle: "Eingehender Anruf — Häufigster Anruf",
     description:
       "Herr Lehmann braucht einen Termin für seine Einkommensteuererklärung. Der Bot prüft den Kalender von Herrn Weber, schlägt drei Nachmittagsoptionen vor, bucht den Termin und sendet eine Bestätigungs-SMS.",
-    duration: "1:09",
+    duration: "1:13",
     audioSrc: "/audio/demo-terminvergabe.mp3",
   },
   {
     title: "Belegeinreichung koordinieren",
     subtitle: "Eingehender Anruf — Saisonale Spitze",
     description:
-      "Frau Klein von der Klein Consulting GmbH fragt, welche Unterlagen für den Jahresabschluss noch fehlen. Der Bot gleicht mit der Checkliste ab, nennt die drei offenen Positionen und sendet einen sicheren Upload-Link per E-Mail.",
-    duration: "1:06",
+      "Herr Berger von der Berger Consulting GmbH fragt, welche Unterlagen für den Jahresabschluss noch fehlen. Der Bot identifiziert den Mandanten über die Steuernummer, gleicht mit der Checkliste ab und sendet einen sicheren Upload-Link per E-Mail.",
+    duration: "1:29",
     audioSrc: "/audio/demo-belegeinreichung.mp3",
   },
   {
@@ -30,7 +30,7 @@ const demos = [
     subtitle: "Eingehender Anruf — Außerhalb der Bürozeiten",
     description:
       "Herr Krause ruft abends an und braucht dringend Hilfe wegen eines Schreibens vom Finanzamt. Der Bot nimmt sein Anliegen und seine Rückrufnummer auf und organisiert einen Rückruf am nächsten Werktag.",
-    duration: "1:20",
+    duration: "1:18",
     audioSrc: "/audio/demo-rueckruf.mp3",
   },
   {
@@ -45,8 +45,8 @@ const demos = [
     title: "Frist-Erinnerung",
     subtitle: "Ausgehender Anruf — Proaktiv",
     description:
-      "Der Bot ruft Frau Meier proaktiv an und erinnert sie an zwei fehlende Unterlagen für die Einkommensteuererklärung. Er nennt die Abgabefrist, sendet einen sicheren Upload-Link und bietet eine automatische Nachfass-Erinnerung an.",
-    duration: "1:00",
+      "Der Bot ruft Herrn Meier proaktiv an und erinnert ihn an zwei fehlende Unterlagen für die Einkommensteuererklärung. Er nennt die Abgabefrist, sendet einen sicheren Upload-Link und bietet eine automatische Nachfass-Erinnerung an.",
+    duration: "1:02",
     audioSrc: "/audio/demo-frist-erinnerung.mp3",
   },
 ];
