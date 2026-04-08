@@ -311,7 +311,7 @@ export default function Home() {
                 wissen müssen — verständlich erklärt, mit konkreten Checklisten.
               </p>
               <Link
-                href="/ratgeber"
+                href="/leitfaden"
                 className="inline-flex items-center gap-2 cta-gradient px-6 py-3 rounded-full text-white font-semibold hover:opacity-95 transition-all"
               >
                 <span className="material-symbols-outlined text-lg">download</span>
