@@ -13,40 +13,40 @@ const demos = [
     title: "Terminvergabe",
     subtitle: "Eingehender Anruf — Häufigster Anruf",
     description:
-      "Herr Lehmann braucht einen Termin für seine Einkommensteuererklärung. Der Bot prüft den Kalender von Herrn Weber, schlägt drei Optionen vor, bucht den Termin und sendet eine Bestätigungs-SMS.",
-    duration: "1:17",
+      "Herr Lehmann braucht einen Termin für seine Einkommensteuererklärung. Der Bot prüft den Kalender von Herrn Weber, schlägt drei Nachmittagsoptionen vor, bucht den Termin und sendet eine Bestätigungs-SMS.",
+    duration: "1:09",
     audioSrc: "/audio/demo-terminvergabe.mp3",
   },
   {
     title: "Belegeinreichung koordinieren",
     subtitle: "Eingehender Anruf — Saisonale Spitze",
     description:
-      "Ein Mandant fragt, welche Unterlagen für den Jahresabschluss noch fehlen. Der Bot gleicht mit der Checkliste ab, nennt die offenen Positionen und sendet einen sicheren Upload-Link per SMS oder E-Mail.",
-    duration: "1:19",
+      "Frau Klein von der Klein Consulting GmbH fragt, welche Unterlagen für den Jahresabschluss noch fehlen. Der Bot gleicht mit der Checkliste ab, nennt die drei offenen Positionen und sendet einen sicheren Upload-Link per E-Mail.",
+    duration: "1:06",
     audioSrc: "/audio/demo-belegeinreichung.mp3",
   },
   {
-    title: "Steuerbescheid-Status",
-    subtitle: "Eingehender Anruf — Bestandsmandant",
+    title: "24/7 Erreichbarkeit",
+    subtitle: "Eingehender Anruf — Außerhalb der Bürozeiten",
     description:
-      "Herr Bauer fragt nach dem Stand seiner Steuererklärung. Der Bot schaut in die Akte, informiert ihn dass der Bescheid gestern eingegangen ist und bei Sachbearbeiter Herrn Fischer zur Prüfung liegt.",
-    duration: "1:08",
-    audioSrc: "/audio/demo-status-abfrage.mp3",
+      "Herr Krause ruft abends an und braucht dringend Hilfe wegen eines Schreibens vom Finanzamt. Der Bot nimmt sein Anliegen und seine Rückrufnummer auf und organisiert einen Rückruf am nächsten Werktag.",
+    duration: "1:20",
+    audioSrc: "/audio/demo-rueckruf.mp3",
   },
   {
     title: "Neu-Mandanten Aufnahme",
     subtitle: "Eingehender Anruf — Lead-Generierung",
     description:
-      "Herr Yilmaz hat eine UG gegründet und sucht einen Steuerberater. Der Bot erfasst Branche (Gastronomie), Mitarbeiterzahl und Bedarf, leitet den Lead an die Spezialistin für Existenzgründer weiter und sendet eine Willkommens-E-Mail.",
-    duration: "1:29",
+      "Herr Yilmaz hat eine UG in der Gastronomie gegründet und sucht einen Steuerberater. Der Bot erfasst Branche, Mitarbeiterzahl und Beratungsbedarf, leitet den qualifizierten Lead an die Spezialistin für Existenzgründer weiter und sendet eine Willkommens-E-Mail.",
+    duration: "1:27",
     audioSrc: "/audio/demo-mandanten-aufnahme.mp3",
   },
   {
     title: "Frist-Erinnerung",
     subtitle: "Ausgehender Anruf — Proaktiv",
     description:
-      "Der Bot ruft Frau Meier an und erinnert sie an zwei fehlende Unterlagen für die Einkommensteuererklärung. Er nennt die Frist und sendet einen sicheren Upload-Link per SMS und E-Mail.",
-    duration: "1:17",
+      "Der Bot ruft Frau Meier proaktiv an und erinnert sie an zwei fehlende Unterlagen für die Einkommensteuererklärung. Er nennt die Abgabefrist, sendet einen sicheren Upload-Link und bietet eine automatische Nachfass-Erinnerung an.",
+    duration: "1:00",
     audioSrc: "/audio/demo-frist-erinnerung.mp3",
   },
 ];

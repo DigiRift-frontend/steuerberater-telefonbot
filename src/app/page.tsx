@@ -193,10 +193,10 @@ export default function Home() {
           </div>
           <div className="text-center mt-10">
             <Link
-              href="/leistungen"
+              href="/use-cases"
               className="inline-flex items-center gap-2 text-primary font-headline font-semibold hover:underline"
             >
-              Alle 8 Anwendungsfälle ansehen
+              Alle Use Cases ansehen
               <span className="material-symbols-outlined text-lg">arrow_forward</span>
             </Link>
           </div>

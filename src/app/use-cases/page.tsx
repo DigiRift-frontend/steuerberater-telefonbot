@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Anwendungsfälle — KI-Telefonbot für Steuerkanzleien",
+  title: "Use Cases — KI-Telefonbot für Steuerkanzleien",
   description:
     "Frist-Erinnerungen, Mandanten-Aufnahme, Status-Abfragen, Terminvergabe und mehr — so unterstützt der KI-Telefonbot Ihre Steuerkanzlei.",
 };
@@ -129,7 +129,7 @@ export default function Anwendungsfaelle() {
       <section className="pt-28 pb-16 px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
           <p className="text-sm font-semibold tracking-widest uppercase text-primary mb-4">
-            Anwendungsfälle
+            Use Cases
           </p>
           <h1 className="font-headline text-4xl sm:text-5xl font-bold leading-tight">
             So unterstützt der Bot{" "}
@@ -185,7 +185,7 @@ export default function Anwendungsfaelle() {
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl cta-gradient rounded-3xl p-10 sm:p-14 text-center text-on-primary">
           <h2 className="font-headline text-3xl font-bold">
-            Welcher Anwendungsfall passt zu Ihrer Kanzlei?
+            Welcher Use Case passt zu Ihrer Kanzlei?
           </h2>
           <p className="mt-4 text-lg opacity-90">
             Im kostenlosen Erstgespräch analysieren wir gemeinsam, welche
