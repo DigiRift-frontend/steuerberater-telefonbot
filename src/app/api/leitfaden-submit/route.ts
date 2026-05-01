@@ -1,79 +1,119 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import jwt from "jsonwebtoken";
 
-const DIGILETTER_URL = "https://newsletter.wirbauensoftware.de/api/v1/subscribe";
-const DIGILETTER_API_KEY = process.env.DIGILETTER_API_KEY || "";
-const DIGILETTER_LIST_ID = "cmnhhpi9q0007mz01wlwi908a";
-const JWT_SECRET = process.env.QUIZ_JWT_SECRET || "missing-secret";
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://steuerberater-telefonbot.de";
+const CRM_EBOOK_URL = "https://digicrm.wirbauensoftware.de/api/ebook/send";
+const SITE_DOMAIN = "steuerberater-telefonbot.de";
+const EBOOK_TITLE = "KI-Leitfaden für Steuerkanzleien";
 
-interface EbookSubmitPayload {
+const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+function maskEmail(email: string): string {
+  const [local, domain] = email.split("@");
+  if (!local || !domain) return "***";
+  const masked = local.length > 2 ? `${local[0]}***${local.slice(-1)}` : "***";
+  return `${masked}@${domain}`;
+}
+
+interface SubmitBody {
   email: string;
   praxisName?: string;
+  firstName?: string;
   newsletterOptIn?: boolean;
 }
 
-export async function POST(request: Request) {
+export async function POST(request: NextRequest) {
   try {
-    const body: EbookSubmitPayload = await request.json();
+    const body = (await request.json()) as SubmitBody;
+    const email = (body.email || "").trim();
+    const firstName = (body.firstName || "").trim() || "Interessent";
+    const praxisName = (body.praxisName || "").trim();
+    const wantsNewsletter = body.newsletterOptIn !== false;
 
-    if (!body.email || !body.email.includes("@")) {
-      return NextResponse.json({ error: "Ungültige E-Mail-Adresse" }, { status: 400 });
+    if (!email || !EMAIL_REGEX.test(email)) {
+      return NextResponse.json(
+        { error: "Ungültige E-Mail-Adresse." },
+        { status: 400 },
+      );
+    }
+
+    const jwtSecret = process.env.QUIZ_JWT_SECRET;
+    const crmApiKey = process.env.DIGICRM_API_KEY;
+    const siteUrl =
+      process.env.NEXT_PUBLIC_SITE_URL || `https://${SITE_DOMAIN}`;
+
+    if (!jwtSecret) {
+      console.error("[LEITFADEN-SUBMIT] QUIZ_JWT_SECRET missing");
+      return NextResponse.json(
+        { error: "Server-Konfiguration fehlt." },
+        { status: 500 },
+      );
+    }
+
+    if (!crmApiKey) {
+      console.error("[LEITFADEN-SUBMIT] DIGICRM_API_KEY missing");
+      return NextResponse.json(
+        { error: "CRM-Konfiguration fehlt." },
+        { status: 500 },
+      );
     }
 
     const token = jwt.sign(
-      {
-        email: body.email,
-        praxisName: body.praxisName,
-        type: "ebook",
+      { email, praxisName, type: "ebook" },
+      jwtSecret,
+      { expiresIn: "7d", algorithm: "HS256" },
+    );
+    const downloadUrl = `${siteUrl}/leitfaden/download?t=${token}`;
+
+    const crmRes = await fetch(CRM_EBOOK_URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${crmApiKey}`,
       },
-      JWT_SECRET,
-      { expiresIn: "7d" }
+      body: JSON.stringify({
+        email,
+        firstName,
+        company: praxisName,
+        ebookTitle: EBOOK_TITLE,
+        downloadUrl,
+        wantsNewsletter,
+        magnetType: "EBOOK",
+        sourceTag: SITE_DOMAIN,
+        category: "Infomaterial Download",
+      }),
+    });
+
+    const crmData = (await crmRes.json().catch(() => ({}))) as {
+      success?: boolean;
+      emailSent?: boolean;
+    };
+
+    console.log(
+      "[LEITFADEN-SUBMIT]",
+      crmRes.status,
+      maskEmail(email),
+      JSON.stringify({
+        emailSent: crmData.emailSent ?? false,
+        wantsNewsletter,
+      }),
     );
 
-    const downloadUrl = `${SITE_URL}/leitfaden/download?t=${token}`;
-
-    let alreadyConfirmed = false;
-
-    if (DIGILETTER_API_KEY) {
-      try {
-        const res = await fetch(DIGILETTER_URL, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${DIGILETTER_API_KEY}`,
-          },
-          body: JSON.stringify({
-            email: body.email,
-            tags: ["steuerberater-telefonbot", "quelle-ebook"],
-            listId: DIGILETTER_LIST_ID,
-            redirectUrl: downloadUrl,
-          }),
-        });
-        const data = await res.json();
-        console.log("[EBOOK-DIGILETTER]", res.status, JSON.stringify(data));
-
-        if (data.status === "confirmed") {
-          alreadyConfirmed = true;
-        }
-      } catch (err) {
-        console.error("[EBOOK-DIGILETTER] Error:", err);
-      }
+    if (!crmRes.ok) {
+      return NextResponse.json(
+        { error: "Bestätigungs-Mail konnte nicht versendet werden." },
+        { status: 502 },
+      );
     }
-
-    console.log("[EBOOK-SUBMIT]", JSON.stringify({
-      timestamp: new Date().toISOString(),
-      email: body.email,
-      praxisName: body.praxisName,
-      alreadyConfirmed,
-    }));
 
     return NextResponse.json({
       success: true,
-      alreadyConfirmed,
-      downloadUrl: alreadyConfirmed ? downloadUrl : undefined,
+      emailSent: crmData.emailSent ?? true,
     });
-  } catch {
-    return NextResponse.json({ error: "Server-Fehler" }, { status: 500 });
+  } catch (err) {
+    console.error("[LEITFADEN-SUBMIT] Error:", err);
+    return NextResponse.json(
+      { error: "Interner Serverfehler." },
+      { status: 500 },
+    );
   }
 }

@@ -3,8 +3,6 @@
 import { Suspense, useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
-import { sendLead } from "@/lib/send-lead";
-
 export default function Download() {
   return (
     <Suspense
@@ -44,11 +42,8 @@ function DownloadContent() {
           setError(true);
         } else {
           setVerified(true);
-          sendLead({
-            type: "ebook",
-            email: data.email,
-            praxisName: data.praxisName,
-          });
+          // Lead wurde bereits beim Submit von /api/leitfaden-submit -> DigiCRM /api/ebook/send
+          // angelegt. Kein zweiter sendLead-Call mehr noetig.
         }
       })
       .catch(() => setError(true))

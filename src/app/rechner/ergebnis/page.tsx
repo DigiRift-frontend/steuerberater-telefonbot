@@ -3,7 +3,6 @@
 import { Suspense, useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
-import { sendLead } from "@/lib/send-lead";
 
 interface QuizResult {
   email: string;
@@ -51,14 +50,8 @@ function ErgebnisContent() {
           setError(true);
         } else {
           setResult(data);
-          // Send lead to CRM
-          sendLead({
-            type: "quiz",
-            email: data.email,
-            praxisName: data.praxisName,
-            quizAnswers: data.quizAnswers,
-            quizScore: data.quizScore,
-          });
+          // Lead wurde bereits beim Submit von /api/rechner-submit -> DigiCRM /api/ebook/send
+          // angelegt. Kein zweiter sendLead-Call mehr noetig.
         }
       })
       .catch(() => setError(true))

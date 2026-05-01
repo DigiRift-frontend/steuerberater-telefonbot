@@ -1,11 +1,18 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import jwt from "jsonwebtoken";
 
-const DIGILETTER_URL = "https://newsletter.wirbauensoftware.de/api/v1/subscribe";
-const DIGILETTER_API_KEY = process.env.DIGILETTER_API_KEY || "";
-const DIGILETTER_LIST_ID = "cmnhhpi9q0007mz01wlwi908a";
-const JWT_SECRET = process.env.QUIZ_JWT_SECRET || "missing-secret";
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://steuerberater-telefonbot.de";
+const CRM_EBOOK_URL = "https://digicrm.wirbauensoftware.de/api/ebook/send";
+const SITE_DOMAIN = "steuerberater-telefonbot.de";
+const QUIZ_TITLE = "Dein Kanzlei-Status-Check Ergebnis";
+
+const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+function maskEmail(email: string): string {
+  const [local, domain] = email.split("@");
+  if (!local || !domain) return "***";
+  const masked = local.length > 2 ? `${local[0]}***${local.slice(-1)}` : "***";
+  return `${masked}@${domain}`;
+}
 
 interface QuizSubmitPayload {
   email: string;
@@ -15,75 +22,120 @@ interface QuizSubmitPayload {
   quizScore: number;
 }
 
-export async function POST(request: Request) {
+export async function POST(request: NextRequest) {
   try {
-    const body: QuizSubmitPayload = await request.json();
+    const body = (await request.json()) as QuizSubmitPayload;
+    const email = (body.email || "").trim();
 
-    if (!body.email || !body.email.includes("@")) {
-      return NextResponse.json({ error: "Ungültige E-Mail-Adresse" }, { status: 400 });
+    if (!email || !EMAIL_REGEX.test(email)) {
+      return NextResponse.json(
+        { error: "Ungültige E-Mail-Adresse." },
+        { status: 400 },
+      );
     }
+
+    const jwtSecret = process.env.QUIZ_JWT_SECRET;
+    const crmApiKey = process.env.DIGICRM_API_KEY;
+    const siteUrl =
+      process.env.NEXT_PUBLIC_SITE_URL || `https://${SITE_DOMAIN}`;
+
+    if (!jwtSecret) {
+      console.error("[RECHNER-SUBMIT] QUIZ_JWT_SECRET missing");
+      return NextResponse.json(
+        { error: "Server-Konfiguration fehlt." },
+        { status: 500 },
+      );
+    }
+
+    if (!crmApiKey) {
+      console.error("[RECHNER-SUBMIT] DIGICRM_API_KEY missing");
+      return NextResponse.json(
+        { error: "CRM-Konfiguration fehlt." },
+        { status: 500 },
+      );
+    }
+
+    // Name -> firstName/lastName
+    const nameParts = (body.name || "").trim().split(/\s+/).filter(Boolean);
+    const firstName = nameParts[0] || "Interessent";
+    const lastName =
+      nameParts.length > 1 ? nameParts.slice(1).join(" ") : "(Kostenrechner)";
+    const praxisName = (body.praxisName || "").trim();
 
     const token = jwt.sign(
       {
-        email: body.email,
-        praxisName: body.praxisName,
+        email,
+        praxisName,
         quizAnswers: body.quizAnswers,
         quizScore: body.quizScore,
+        type: "quiz",
       },
-      JWT_SECRET,
-      { expiresIn: "7d" }
+      jwtSecret,
+      { expiresIn: "7d", algorithm: "HS256" },
+    );
+    const resultUrl = `${siteUrl}/rechner/ergebnis?t=${token}`;
+
+    const a = body.quizAnswers || {};
+    const descLines: string[] = [
+      `Kostenrechner-Ergebnis: ~${(body.quizScore ?? 0).toLocaleString("de-DE")} EUR Verlust/Monat`,
+    ];
+    Object.entries(a).forEach(([key, value]) => {
+      descLines.push(`${key}: ${value}`);
+    });
+    const description = descLines.join("\n");
+
+    const crmRes = await fetch(CRM_EBOOK_URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${crmApiKey}`,
+      },
+      body: JSON.stringify({
+        email,
+        firstName,
+        lastName,
+        company: praxisName,
+        ebookTitle: QUIZ_TITLE,
+        downloadUrl: resultUrl,
+        wantsNewsletter: true,
+        magnetType: "QUIZ",
+        description,
+        sourceTag: SITE_DOMAIN,
+        category: "KI-Status-Check",
+      }),
+    });
+
+    const crmData = (await crmRes.json().catch(() => ({}))) as {
+      success?: boolean;
+      emailSent?: boolean;
+    };
+
+    console.log(
+      "[RECHNER-SUBMIT]",
+      crmRes.status,
+      maskEmail(email),
+      JSON.stringify({
+        emailSent: crmData.emailSent ?? false,
+        quizScore: body.quizScore,
+      }),
     );
 
-    const resultUrl = `${SITE_URL}/rechner/ergebnis?t=${token}`;
-
-    const nameParts = (body.name || "").trim().split(" ");
-    const firstName = nameParts[0] || undefined;
-    const lastName = nameParts.length > 1 ? nameParts.slice(1).join(" ") : undefined;
-
-    let alreadyConfirmed = false;
-
-    if (DIGILETTER_API_KEY) {
-      try {
-        const res = await fetch(DIGILETTER_URL, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${DIGILETTER_API_KEY}`,
-          },
-          body: JSON.stringify({
-            email: body.email,
-            firstName,
-            lastName,
-            tags: ["steuerberater-telefonbot", "quelle-kostenrechner"],
-            listId: DIGILETTER_LIST_ID,
-            redirectUrl: resultUrl,
-          }),
-        });
-        const data = await res.json();
-        console.log("[QUIZ-DIGILETTER]", res.status, JSON.stringify(data));
-
-        if (data.status === "confirmed") {
-          alreadyConfirmed = true;
-        }
-      } catch (err) {
-        console.error("[QUIZ-DIGILETTER] Error:", err);
-      }
+    if (!crmRes.ok) {
+      return NextResponse.json(
+        { error: "Bestätigungs-Mail konnte nicht versendet werden." },
+        { status: 502 },
+      );
     }
-
-    console.log("[QUIZ-SUBMIT]", JSON.stringify({
-      timestamp: new Date().toISOString(),
-      email: body.email,
-      praxisName: body.praxisName,
-      quizScore: body.quizScore,
-      alreadyConfirmed,
-    }));
 
     return NextResponse.json({
       success: true,
-      alreadyConfirmed,
-      resultUrl: alreadyConfirmed ? resultUrl : undefined,
+      emailSent: crmData.emailSent ?? true,
     });
-  } catch {
-    return NextResponse.json({ error: "Server-Fehler" }, { status: 500 });
+  } catch (err) {
+    console.error("[RECHNER-SUBMIT] Error:", err);
+    return NextResponse.json(
+      { error: "Interner Serverfehler." },
+      { status: 500 },
+    );
   }
 }
